@@ -1,0 +1,86 @@
+  <!doctype html>
+  <meta charset=utf-8>
+  <title>WR Calculator</title>
+  <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+
+<header>
+  <nav>
+    <a href="/">Care</a>
+    <a href="/wr">Win Rate</a>
+    <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+    <a href="https://docs.google.com/spreadsheets/d/1vHvEw0pzhxERHbPolf2C8j93H744rWYxjamWZ3IT1aE/">Base Stats</a>
+  </nav>
+</header>
+
+  <main>
+    <h1>Win Rate Calculator</h1>
+    <p>Note these are rounded to the nearest percent, have not tested how rounding impacts WR evolve requirement.</p>
+  
+    <section>
+    <label for=w>Wins</label>
+    <input type=number id=w min=0>
+    
+    <label for=l>Losses</label>
+    <input type=number id=l min=0>
+    
+    <label for=r>Current W/L:</label>
+    <output id=r></output>
+    </section>
+    
+  <table>
+    <thead>
+      <tr>
+        <th align="center">Total Battles</th>
+        <th>Win</th>
+        <th>Lose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id=b1></td>
+        <td id=w1></td>
+        <td id=l1></td>
+      </tr>
+      <tr>
+        <td id=b2></td>
+        <td id=w2></td>
+        <td id=l2></td>
+      </tr>
+      <tr>
+        <td id=b3></td>
+        <td id=w3></td>
+        <td id=l3></td>
+      </tr>
+      <tr>
+        <td id=b4></td>
+        <td id=w4></td>
+        <td id=l4></td>
+      </tr>
+      <tr>
+        <td id=b5></td>
+        <td id=w5></td>
+        <td id=l5></td>
+      </tr>
+      <tr>
+        <td id=b6></td>
+        <td id=w6></td>
+        <td id=l6></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  </main>
+  
+  <script src=wr.js></script>
+  
+  <script>
+    // calculate output when any input changes
+    w.oninput = l.oninput = function () {
+      r.value = winrate(
+        Number(w.value),
+        Number(l.value)
+      );
+      updateTableEntry();
+    };
+  </script>
+
