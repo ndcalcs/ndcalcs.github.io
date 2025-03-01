@@ -1,24 +1,30 @@
   <!doctype html>
   <meta charset=utf-8>
-  <title>Care Calculator</title>
+  <title>ND: Care Calculator</title>
   <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
 
 <header>
+  <h1>NetDriver Calculators and Data</h1>
+  <p>Compiled and coded by Carrow8993</p>
   <nav>
-    <a href="/">Care</a>
-    <a href="/wr">Win Rate</a>
+    <a href="./index.html">Care</a>
+    <a href="./wr.html">Win Rate</a>
+    <a href="./statcalcs.html">Base Stats</a>
+    <a href="./boxdrops.html">Box Drops</a>
     <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
-    <a href="https://docs.google.com/spreadsheets/d/1vHvEw0pzhxERHbPolf2C8j93H744rWYxjamWZ3IT1aE/">Base Stats</a>
   </nav>
 </header>
 
   <main>
-    <h1>Care Calculator</h1>
+    <h2><center>Care Calculator</center></h2>
     <p>Note that these are upper estimates, actual times will be shorter depending on how recently the value ticked to the input value. Hunger has a lower bound listed of (current hunger-10)+1min to account for this, its upper bound is based solely on the input hunger. Hunger only decrements by 10 in-game.</p>
   
     <section>
     <label for=f>Fatigue%</label>
     <input type=number id=f min=0 max=100>
+    
+    <label for=pd>(Pillomon Only) Pillo Drivers</label>
+    <input type=number id=pd min=0 max=5 value=0>
     
     <label for=f0>Offline time until 0 fatigue:</label>
     <output id=f0></output>
@@ -45,21 +51,22 @@
   
   <script>
     // calculate output when any input changes
-    f.oninput = function () {
+    f.oninput = pd.oninput = function () {
       f0.value = fatiguecalc(
         Number(f.value),
+        Number(pd.value)
       ); 
     };
     
     h.oninput = function () {
       h0.value = hungercalc(
-        Number(h.value),
+        Number(h.value)
       ); 
     };
     
     p.oninput = function () {
       p0.value = poopcalc(
-        Number(p.value),
+        Number(p.value)
       ); 
     };
   </script>
