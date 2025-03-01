@@ -482,24 +482,10 @@
   
   <script>
     // calculate output when any input changes
-    child.oninput = function () {
+    child.oninput = adult.oninput = perf.oninput = function () {
       calcBaseStat(child.value,"Koromon","Child");
-    };
-    
-    adult.oninput = function () {
-      calcBaseStat(
-        adult.value,
-        child.value,
-        "Adult"
-      );
-    };
-    
-    perf.oninput = function () {
-      calcBaseStat(
-        perf.value,
-        adult.value,
-        "Perfect"
-      );
+      calcBaseStat(adult.value,child.value,"Adult");
+      calcBaseStat(perf.value,adult.value,"Perfect");
     };
   </script>
 
