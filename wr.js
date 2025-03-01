@@ -8,8 +8,10 @@ const widList = ['w1','w2','w3','w4','w5','w6'];
 const lidList = ['l1','l2','l3','l4','l5','l6'];
 
 function winrate(w,l) {
-  if((w < 0) || (l < 0)) return `Enter non-negative values`;
-  if((w == 0) && (l == 0)) return `0%`;
+  if((w < 0) || (l < 0))
+    return `Enter non-negative values`;
+  if((w == 0) && (l == 0))
+    return `0%`;
   const ratio = (Math.round(w/(w+l)*100)).toString();
   return `${ratio}%`;
 }
@@ -20,7 +22,8 @@ function updateTableEntry() {
     var wins = Number(win.value) ? Number(win.value) : 0;
     var losses = Number(loss.value) ? Number(loss.value) : 0;
     var battles = wins + losses + i + 1;
-    if((wins < 0) || (losses < 0)) return;
+    if((wins < 0) || (losses < 0))
+      return;
     document.getElementById(bidList[i]).textContent = battles; 
     document.getElementById(widList[i]).textContent = winrate(wins+i+1,losses);
     document.getElementById(lidList[i]).textContent = winrate(wins,losses+i+1);
