@@ -1,0 +1,505 @@
+  <!doctype html>
+  <meta charset=utf-8>
+  <title>ND: Base Stat Calculator</title>
+  <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>  
+  
+<header>
+  <h1>NetDriver Calculators and Data</h1>
+  <p>Compiled and coded by Carrow8993</p>
+  <nav>
+    <a href="./index.html">Care</a>
+    <a href="./wr.html">Win Rate</a>
+    <a href="./statcalcs.html">Base Stats</a>
+    <a href="./boxdrops.html">Box Drops</a>
+    <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+  </nav>
+</header>
+  
+  <main>
+    <h1><center>Base Stat Calculator</center></h1>
+  
+  <section>
+  <table style="margin-left:auto; margin-right:auto;">
+    <thead>
+      <tr>
+        <th>Digimon</th>
+        <th>DEF</th>
+        <th>SPD</th>
+        <th>ATK</th>
+        <th>HP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id=baby1>Botamon</td>
+        <td id="def1"><center>6</center></td>
+        <td id="spd1"><center>4</center></td>
+        <td id="atk1"><center>6</center></td>
+        <td id="hp1"><center>50</center></td>
+      </tr>
+      <tr>
+        <td id=baby2>Koromon</td>
+        <td id="def2"><center>8</center></td>
+        <td id="spd2"><center>8</center></td>
+        <td id="atk2"><center>11</center></td>
+        <td id="hp2"><center>110</center></td>
+      </tr>
+      <tr>
+        <td>
+          <select id="child" name="child">
+             <option value="Agumon">Agumon</option>
+             <option value="Agumon 06">Agumon 06</option>
+             <option value="Black Agumon">Black Agumon</option>
+             <option value="Kokuwamon">Kokuwamon</option>
+             <option value="Pillomon">Pillomon</option>
+             <option value="Yuki Agumon">Yuki Agumon</option>
+          </select>
+        </td>
+        <td><center><label id=def3></label></center></td>
+        <td><center><label id=spd3></label></center></td>
+        <td><center><label id=atk3></label></center></td>
+        <td><center><label id=hp3></label></center></td>
+      </tr>
+      <tr>
+        <td>
+          <select id=adult>
+            <option value="Clockmon">Clockmon</option>
+            <option value="DarkTyrannomon">DarkTyrannomon</option>
+            <option value="Deltamon">Deltamon</option>
+            <option value="GeoGreymon">GeoGreymon</option>
+            <option value="Geremon">Geremon</option>
+            <option value="GoldGuardromon">GoldGuardromon</option>
+            <option value="GoldNumemon">GoldNumemon</option>
+            <option value="Greymon">Greymon</option>
+            <option value="Guardromon">Guardromon</option>
+            <option value="Numemon">Numemon</option>
+            <option value="ShellNumemon">ShellNumemon</option>
+            <option value="Thunderballmon">Thunderballmon</option>
+            <option value="Tuskmon">Tuskmon</option>
+            <option value="Tyrannomon">Tyrannomon</option>
+            <option value="Vdramon">Vdramon</option>
+            <option value="VDramon Black">VDramon Black</option>
+            <option value="VDramon Red">VDramon Red</option>
+            <option value="YukiDarumon">YukiDarumon</option>
+          </select>
+        </td>
+        <td><center><label id="def4"></label></center></td>
+        <td><center><label id="spd4"></label></center></td>
+        <td><center><label id="atk4"></label></center></td>
+        <td><center><label id="hp4"></label></center>
+      </tr>
+      <tr>
+        <td>
+          <select id=perf>
+            <option value="AeroVdramon">AeroVdramon</option>
+            <option value="Andromon">Andromon</option>
+            <option value="Big Mamemon">Big Mamemon</option>
+            <option value="Black King Numemon">Black King Numemon</option>
+            <option value="BlackAeroVdramon">BlackAeroVdramon</option>
+            <option value="Gigadramon">Gigadramon</option>
+            <option value="GigaWaruMonzaemon">GigaWaruMonzaemon</option>
+            <option value="Mamemon">Mamemon</option>
+            <option value="MameTyramon">MameTyramon</option>
+            <option value="Megadramon">Megadramon</option>
+            <option value="MetalGreymon">MetalGreymon</option>
+            <option value="MetalGreymon Alter">MetalGreymon Alter</option>
+            <option value="MetalGreymon Virus">MetalGreymon Virus</option>
+            <option value="MetalMamemon">MetalMamemon</option>
+            <option value="MetalTyrannomon">MetalTyrannomon</option>
+            <option value="Monzaemon">Monzaemon</option>
+            <option value="Polar Bearmon">Polar Bearmon</option>
+            <option value="RizeGreymon">RizeGreymon</option>
+            <option value="Triceramon">Triceramon</option>
+            <option value="WaruMonzaemon">WaruMonzaemon</option>
+          </select>
+        </td>
+        <td><center><label id="def5"></label></center></td>
+        <td><center><label id="spd5"></label></center></td>
+        <td><center><label id="atk5"></label></center></td>
+        <td><center><label id="hp5"></label></center></td>
+      </tr>
+    </tbody>
+  </table>
+  </section>
+  
+  <section>
+  <center><h3>Child Innate Stats</h3></center>
+<table style="margin-left:auto; margin-right:auto;">
+  <thead>
+    <tr>
+      <th>Digimon</th>
+      <th><center>DEF</center></th>
+      <th><center>SPD</center></th>
+      <th><center>ATK</center></th>
+      <th><center>HP</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agumon</td>
+      <td><center>25</center></td>
+      <td><center>50</center></td>
+      <td><center>50</center></td>
+      <td><center>250</center></td>
+    </tr>
+    <tr>
+      <td>Agumon 06</td>
+      <td><center>25</center></td>
+      <td><center>55</center></td>
+      <td><center>55</center></td>
+      <td><center>250</center></td>
+    </tr>
+    <tr>
+      <td>Black Agumon</td>
+      <td><center>25</center></td>
+      <td><center>40</center></td>
+      <td><center>55</center></td>
+      <td><center>300</center></td>
+    </tr>
+    <tr>
+      <td>Kokuwamon</td>
+      <td><center>45</center></td>
+      <td><center>30</center></td>
+      <td><center>30</center></td>
+      <td><center>450</center></td>
+    </tr>
+    <tr>
+      <td>Pillomon</td>
+      <td><center>55</center></td>
+      <td><center>20</center></td>
+      <td><center>25</center></td>
+      <td><center>500</center></td>
+    </tr>
+    <tr>
+      <td>Yuki Agumon</td>
+      <td><center>30</center></td>
+      <td><center>45</center></td>
+      <td><center>40</center></td>
+      <td><center>350</center></td>
+    </tr>
+  </tbody>
+</table>
+  <section>
+  <center><h3>Adult Innate Stats</h3></center>
+  <table style="margin-left:auto; margin-right:auto;">
+    <thead>
+    <tr>
+      <th>Digimon</th>
+      <th><center>DEF</center></th>
+      <th><center>SPD</center></th>
+      <th><center>ATK</center></th>
+      <th><center>HP</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clockmon</td>
+      <td><center>50</center></td>
+      <td><center>65</center></td>
+      <td><center>80</center></td>
+      <td><center>1050</center></td>
+    </tr>
+    <tr>
+      <td>DarkTyrannomon</td>
+      <td><center>50</center></td>
+      <td><center>65</center></td>
+      <td><center>80</center></td>
+      <td><center>1050</center></td>
+    </tr>
+    <tr>
+      <td>Deltamon</td>
+      <td><center>40</center></td>
+      <td><center>55</center></td>
+      <td><center>115</center></td>
+      <td><center>900</center></td>
+    </tr>
+    <tr>
+      <td>GeoGreymon</td>
+      <td><center>60</center></td>
+      <td><center>70</center></td>
+      <td><center>110</center></td>
+      <td><center>1000</center></td>
+    </tr>
+    <tr>
+      <td>Geremon</td>
+      <td><center>40</center></td>
+      <td><center>45</center></td>
+      <td><center>50</center></td>
+      <td><center>750</center></td>
+    </tr>
+    <tr>
+      <td>GoldGuardromon</td>
+      <td><center>120</center></td>
+      <td><center>30</center></td>
+      <td><center>50</center></td>
+      <td><center>1100</center></td>
+    </tr>
+    <tr>
+      <td>GoldNumemon</td>
+      <td><center>50</center></td>
+      <td><center>45</center></td>
+      <td><center>50</center></td>
+      <td><center>750</center></td>
+    </tr>
+    <tr>
+      <td>Greymon</td>
+      <td><center>60</center></td>
+      <td><center>65</center></td>
+      <td><center>100</center></td>
+      <td><center>1000</center></td>
+    </tr>
+    <tr>
+      <td>Guardromon</td>
+      <td><center>110</center></td>
+      <td><center>30</center></td>
+      <td><center>50</center></td>
+      <td><center>1100</center></td>
+    </tr>
+    <tr>
+      <td>Numemon</td>
+      <td><center>40</center></td>
+      <td><center>40</center></td>
+      <td><center>45</center></td>
+      <td><center>750</center></td>
+    </tr>
+    <tr>
+      <td>ShellNumemon</td>
+      <td><center>70</center></td>
+      <td><center>30</center></td>
+      <td><center>50</center></td>
+      <td><center>800</center></td>
+    </tr>
+    <tr>
+      <td>Thunderballmon</td>
+      <td><center>50</center></td>
+      <td><center>75</center></td>
+      <td><center>85</center></td>
+      <td><center>900</center></td>
+    </tr>
+    <tr>
+      <td>Tuskmon</td>
+      <td><center>55</center></td>
+      <td><center>40</center></td>
+      <td><center>105</center></td>
+      <td><center>1250</center></td>
+    </tr>
+    <tr>
+      <td>Tyrannomon</td>
+      <td><center>70</center></td>
+      <td><center>50</center></td>
+      <td><center>65</center></td>
+      <td><center>1150</center></td>
+    </tr>
+    <tr>
+      <td>Vdramon</td>
+      <td><center>55</center></td>
+      <td><center>90</center></td>
+      <td><center>100</center></td>
+      <td><center>1050</center></td>
+    </tr>
+    <tr>
+      <td>VDramon Black</td>
+      <td><center>65</center></td>
+      <td><center>75</center></td>
+      <td><center>105</center></td>
+      <td><center>1050</center></td>
+    </tr>
+    <tr>
+      <td>Vdramon Red</td>
+      <td><center>40</center></td>
+      <td><center>100</center></td>
+      <td><center>110</center></td>
+      <td><center>950</center></td>
+    </tr>
+    <tr>
+      <td>YukiDarumon</td>
+      <td><center>80</center></td>
+      <td><center>50</center></td>
+      <td><center>80</center></td>
+      <td><center>1150</center></td>
+    </tr>
+  </tbody>
+  </table>
+  </section>
+  <section>
+  <center><h3>Perfect Innate Stats</h3></center>
+  <table style="margin-left:auto; margin-right:auto;">
+  <thead>
+    <tr>
+      <th>Digimon</th>
+      <th><center>DEF</center></th>
+      <th><center>SPD</center></th>
+      <th><center>ATK</center></th>
+      <th><center>HP</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AeroVdramon</td>
+      <td><center>110</center></td>
+      <td><center>150</center></td>
+      <td><center>215</center></td>
+      <td><center>2250</center></td>
+    </tr>
+    <tr>
+      <td>Andromon</td>
+      <td><center>225</center></td>
+      <td><center>50</center></td>
+      <td><center>100</center></td>
+      <td><center>2250</center></td>
+    </tr>
+    <tr>
+      <td>Big Mamemon</td>
+      <td><center>95</center></td>
+      <td><center>70</center></td>
+      <td><center>165</center></td>
+      <td><center>2800</center></td>
+    </tr>
+    <tr>
+      <td>Black King Numemon</td>
+      <td><center>225</center></td>
+      <td><center>75</center></td>
+      <td><center>85</center></td>
+      <td><center>2400</center></td>
+    </tr>
+    <tr>
+      <td>BlackAeroVdramon</td>
+      <td><center>110</center></td>
+      <td><center>150</center></td>
+      <td><center>235</center></td>
+      <td><center>2050</center></td>
+    </tr>
+    <tr>
+      <td>Gigadramon</td>
+      <td><center>80</center></td>
+      <td><center>140</center></td>
+      <td><center>220</center></td>
+      <td><center>1800</center></td>
+    </tr>
+    <tr>
+      <td>GigaWaruMonzaemon</td>
+      <td><center>130</center></td>
+      <td><center>165</center></td>
+      <td><center>255</center></td>
+      <td><center>2000</center></td>
+    </tr>
+    <tr>
+      <td>Mamemon</td>
+      <td><center>75</center></td>
+      <td><center>140</center></td>
+      <td><center>185</center></td>
+      <td><center>2000</center></td>
+    </tr>
+    <tr>
+      <td>MameTyramon</td>
+      <td><center>85</center></td>
+      <td><center>135</center></td>
+      <td><center>180</center></td>
+      <td><center>2200</center></td>
+    </tr>
+    <tr>
+      <td>Megadramon</td>
+      <td><center>80</center></td>
+      <td><center>135</center></td>
+      <td><center>210</center></td>
+      <td><center>1750</center></td>
+    </tr>
+    <tr>
+      <td>MetalGreymon</td>
+      <td><center>120</center></td>
+      <td><center>130</center></td>
+      <td><center>225</center></td>
+      <td><center>2000</center></td>
+    </tr>
+    <tr>
+      <td>MetalGreymon Alter</td>
+      <td><center>125</center></td>
+      <td><center>135</center></td>
+      <td><center>235</center></td>
+      <td><center>2050</center></td>
+    </tr>
+    <tr>
+      <td>MetalGreymon Virus</td>
+      <td><center>110</center></td>
+      <td><center>130</center></td>
+      <td><center>220</center></td>
+      <td><center>1900</center></td>
+    </tr>
+    <tr>
+      <td>MetalMamemon</td>
+      <td><center>90</center></td>
+      <td><center>140</center></td>
+      <td><center>190</center></td>
+      <td><center>2000</center></td>
+    </tr>
+    <tr>
+      <td>MetalTyrannomon</td>
+      <td><center>125</center></td>
+      <td><center>85</center></td>
+      <td><center>175</center></td>
+      <td><center>2150</center></td>
+    </tr>
+    <tr>
+      <td>Monzaemon</td>
+      <td><center>150</center></td>
+      <td><center>135</center></td>
+      <td><center>235</center></td>
+      <td><center>2300</center></td>
+    </tr>
+    <tr>
+      <td>Polar Bearmon</td>
+      <td><center>210</center></td>
+      <td><center>100</center></td>
+      <td><center>110</center></td>
+      <td><center>2300</center></td>
+    </tr>
+    <tr>
+      <td>RizeGreymon</td>
+      <td><center>110</center></td>
+      <td><center>140</center></td>
+      <td><center>230</center></td>
+      <td><center>1950</center></td>
+    </tr>
+    <tr>
+      <td>Triceramon</td>
+      <td><center>190</center></td>
+      <td><center>75</center></td>
+      <td><center>125</center></td>
+      <td><center>2100</center></td>
+    </tr>
+    <tr>
+      <td>WaruMonzaemon</td>
+      <td><center>140</center></td>
+      <td><center>145</center></td>
+      <td><center>245</center></td>
+      <td><center>2150</center></td>
+    </tr>
+  </tbody>
+</table>
+  </main>
+  
+  <script src=statcalcs.js></script>
+  
+  <script>
+    // calculate output when any input changes
+    child.oninput = function () {
+      calcBaseStat(child.value,"Koromon","Child");
+    };
+    
+    adult.oninput = function () {
+      calcBaseStat(
+        adult.value,
+        child.value,
+        "Adult"
+      );
+    };
+    
+    perf.oninput = function () {
+      calcBaseStat(
+        perf.value,
+        adult.value,
+        "Perfect"
+      );
+    };
+  </script>
+
