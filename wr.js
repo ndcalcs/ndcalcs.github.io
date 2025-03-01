@@ -1,7 +1,6 @@
 // Get the output element by its ID
 const win = document.getElementById('w');
 const loss = document.getElementById('l');
-const tableCell = document.getElementById('w1');
 
 // Get the table cell where you want to display the output
 const bidList = ['b1','b2','b3','b4','b5','b6'];
@@ -9,6 +8,8 @@ const widList = ['w1','w2','w3','w4','w5','w6'];
 const lidList = ['l1','l2','l3','l4','l5','l6'];
 
 function winrate(w,l) {
+  if((w < 0) || (l < 0)) return `Enter non-negative values`;
+  if((w == 0) && (l == 0)) return `0%`;
   const ratio = (Math.round(w/(w+l)*100)).toString();
   return `${ratio}%`;
 }
@@ -16,9 +17,10 @@ function winrate(w,l) {
 // Function to update the table cell with the output value
 function updateTableEntry() {
   for (i=0; i < bidList.length; i++) {
-    var wins = Number(win.value)
-    var losses = Number(loss.value)
+    var wins = Number(win.value) ? Number(win.value) : 0;
+    var losses = Number(loss.value) ? Number(loss.value) : 0;
     var battles = wins + losses + i + 1;
+    if((wins < 0) || (losses < 0)) return;
     document.getElementById(bidList[i]).textContent = battles; 
     document.getElementById(widList[i]).textContent = winrate(wins+i+1,losses);
     document.getElementById(lidList[i]).textContent = winrate(wins,losses+i+1);
