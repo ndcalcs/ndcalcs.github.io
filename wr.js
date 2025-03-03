@@ -3,9 +3,9 @@ const win = document.getElementById('w');
 const loss = document.getElementById('l');
 
 // Get the table cell where you want to display the output
-const bidList = ['b1','b2','b3','b4','b5','b6'];
-const widList = ['w1','w2','w3','w4','w5','w6'];
-const lidList = ['l1','l2','l3','l4','l5','l6'];
+const bidList = ['b1','b2','b3','b4','b5','b6','b7','b8'];
+const widList = ['w1','w2','w3','w4','w5','w6','w7','w8'];
+const lidList = ['l1','l2','l3','l4','l5','l6','l7','l8'];
 
 function winrate(w,l) {
   if((w < 0) || (l < 0))
