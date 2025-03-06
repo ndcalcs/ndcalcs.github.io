@@ -34,6 +34,7 @@ const digimonDict = {
   "GigaWaruMonzaemon": { "DEF": 130, "SPD": 165, "ATK": 255, "HP": 2000 },
   "Mamemon": { "DEF": 75, "SPD": 140, "ATK": 185, "HP": 2000 },
   "MameTyramon": { "DEF": 85, "SPD": 135, "ATK": 180, "HP": 2200 },
+  "Master Tyranomon": {"DEF": 170, "SPD": 90, "ATK": 180, "HP": 2100},
   "Megadramon": { "DEF": 80, "SPD": 135, "ATK": 210, "HP": 1750 },
   "MetalGreymon": { "DEF": 120, "SPD": 130, "ATK": 225, "HP": 2000 },
   "MetalGreymon Alter": { "DEF": 125, "SPD": 135, "ATK": 235, "HP": 2050 },
