@@ -23,12 +23,12 @@ const digimonDict = {
   "Tyrannomon": { "DEF": 70, "SPD": 50, "ATK": 65, "HP": 1150 },
   "Vdramon": { "DEF": 55, "SPD": 90, "ATK": 100, "HP": 1050 },
   "VDramon Black": { "DEF": 65, "SPD": 75, "ATK": 105, "HP": 1050 },
-  "VDramon Red": { "DEF": 40, "SPD": 100, "ATK": 110, "HP": 950 },
+  "VDramon Red": { "DEF": 45, "SPD": 100, "ATK": 110, "HP": 950 },
   "YukiDarumon": { "DEF": 80, "SPD": 50, "ATK": 80, "HP": 1150 },
   "AeroVdramon": { "DEF": 110, "SPD": 150, "ATK": 215, "HP": 2250 },
   "Andromon": { "DEF": 225, "SPD": 50, "ATK": 100, "HP": 2250 },
   "Big Mamemon": { "DEF": 95, "SPD": 70, "ATK": 165, "HP": 2800 },
-  "Black King Numemon": { "DEF": 225, "SPD": 75, "ATK": 85, "HP": 2400 },
+  "Black King Numemon": { "DEF": 200, "SPD": 75, "ATK": 85, "HP": 2400 },
   "BlackAeroVdramon": { "DEF": 110, "SPD": 150, "ATK": 235, "HP": 2050 },
   "Gigadramon": { "DEF": 80, "SPD": 140, "ATK": 220, "HP": 1800 },
   "GigaWaruMonzaemon": { "DEF": 130, "SPD": 165, "ATK": 255, "HP": 2000 },
@@ -45,7 +45,7 @@ const digimonDict = {
   "Polar Bearmon": { "DEF": 210, "SPD": 100, "ATK": 110, "HP": 2300 },
   "RizeGreymon": { "DEF": 110, "SPD": 140, "ATK": 230, "HP": 1950 },
   "Triceramon": { "DEF": 190, "SPD": 75, "ATK": 125, "HP": 2100 },
-  "WaruMonzaemon": { "DEF": 140, "SPD": 145, "ATK": 245, "HP": 2150 }
+  "WaruMonzaemon": { "DEF": 145, "SPD": 145, "ATK": 245, "HP": 2150 }
 };
 const baby1List = ["Botamon"];
 const baby2List = ["Koromon"];
