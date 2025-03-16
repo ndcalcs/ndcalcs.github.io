@@ -1,51 +1,51 @@
 const digimonDict = {
-  "Botamon": { "DEF": 6, "SPD": 4, "ATK": 6, "HP": 50 },
-  "Koromon": { "DEF": 6, "SPD": 6, "ATK": 9, "HP": 90 },
-  "Agumon": { "DEF": 25, "SPD": 50, "ATK": 50, "HP": 250 },
-  "Agumon 06": { "DEF": 25, "SPD": 55, "ATK": 55, "HP": 250 },
-  "Black Agumon": { "DEF": 25, "SPD": 40, "ATK": 55, "HP": 300 },
-  "Kokuwamon": { "DEF": 45, "SPD": 30, "ATK": 30, "HP": 450 },
-  "Pillomon": { "DEF": 55, "SPD": 20, "ATK": 25, "HP": 500 },
-  "Yuki Agumon": { "DEF": 30, "SPD": 45, "ATK": 40, "HP": 350 },
-  "Clockmon": { "DEF": 50, "SPD": 65, "ATK": 80, "HP": 1050 },
-  "DarkTyrannomon": { "DEF": 50, "SPD": 65, "ATK": 80, "HP": 1050 },
-  "Deltamon": { "DEF": 40, "SPD": 55, "ATK": 115, "HP": 900 },
-  "GeoGreymon": { "DEF": 60, "SPD": 70, "ATK": 110, "HP": 1000 },
-  "Geremon": { "DEF": 40, "SPD": 45, "ATK": 50, "HP": 750 },
-  "GoldGuardromon": { "DEF": 120, "SPD": 30, "ATK": 50, "HP": 1100 },
-  "GoldNumemon": { "DEF": 50, "SPD": 45, "ATK": 50, "HP": 750 },
-  "Greymon": { "DEF": 60, "SPD": 65, "ATK": 100, "HP": 1000 },
-  "Guardromon": { "DEF": 110, "SPD": 30, "ATK": 50, "HP": 1100 },
-  "Numemon": { "DEF": 40, "SPD": 40, "ATK": 45, "HP": 750 },
-  "ShellNumemon": { "DEF": 70, "SPD": 30, "ATK": 50, "HP": 800 },
-  "Thunderballmon": { "DEF": 50, "SPD": 75, "ATK": 85, "HP": 900 },
-  "Tuskmon": { "DEF": 55, "SPD": 40, "ATK": 105, "HP": 1250 },
-  "Tyrannomon": { "DEF": 70, "SPD": 50, "ATK": 65, "HP": 1150 },
-  "Vdramon": { "DEF": 55, "SPD": 90, "ATK": 100, "HP": 1050 },
-  "VDramon Black": { "DEF": 65, "SPD": 75, "ATK": 105, "HP": 1050 },
-  "VDramon Red": { "DEF": 45, "SPD": 100, "ATK": 110, "HP": 950 },
-  "YukiDarumon": { "DEF": 80, "SPD": 50, "ATK": 80, "HP": 1150 },
-  "AeroVdramon": { "DEF": 110, "SPD": 150, "ATK": 215, "HP": 2250 },
-  "Andromon": { "DEF": 225, "SPD": 50, "ATK": 100, "HP": 2250 },
-  "Big Mamemon": { "DEF": 95, "SPD": 70, "ATK": 165, "HP": 2800 },
-  "Black King Numemon": { "DEF": 200, "SPD": 75, "ATK": 85, "HP": 2400 },
-  "BlackAeroVdramon": { "DEF": 110, "SPD": 150, "ATK": 235, "HP": 2050 },
-  "Gigadramon": { "DEF": 80, "SPD": 140, "ATK": 220, "HP": 1800 },
-  "GigaWaruMonzaemon": { "DEF": 130, "SPD": 165, "ATK": 255, "HP": 2000 },
-  "Mamemon": { "DEF": 75, "SPD": 140, "ATK": 185, "HP": 2000 },
-  "MameTyramon": { "DEF": 85, "SPD": 135, "ATK": 180, "HP": 2200 },
-  "Master Tyranomon": {"DEF": 170, "SPD": 90, "ATK": 180, "HP": 2100},
-  "Megadramon": { "DEF": 80, "SPD": 135, "ATK": 210, "HP": 1750 },
-  "MetalGreymon": { "DEF": 120, "SPD": 130, "ATK": 225, "HP": 2000 },
-  "MetalGreymon Alter": { "DEF": 125, "SPD": 135, "ATK": 235, "HP": 2050 },
-  "MetalGreymon Virus": { "DEF": 110, "SPD": 130, "ATK": 220, "HP": 1900 },
-  "MetalMamemon": { "DEF": 90, "SPD": 140, "ATK": 190, "HP": 2000 },
-  "MetalTyrannomon": { "DEF": 125, "SPD": 85, "ATK": 175, "HP": 2150 },
-  "Monzaemon": { "DEF": 150, "SPD": 135, "ATK": 235, "HP": 2300 },
-  "Polar Bearmon": { "DEF": 210, "SPD": 100, "ATK": 110, "HP": 2300 },
-  "RizeGreymon": { "DEF": 110, "SPD": 140, "ATK": 230, "HP": 1950 },
-  "Triceramon": { "DEF": 190, "SPD": 75, "ATK": 125, "HP": 2100 },
-  "WaruMonzaemon": { "DEF": 145, "SPD": 145, "ATK": 245, "HP": 2150 }
+  "Botamon": { "HP": 50, "ATK": 6, "SPD": 4, "DEF": 6 },
+  "Koromon": { "HP": 90, "ATK": 9, "SPD": 6, "DEF": 6 },
+  "Agumon": { "HP": 250, "ATK": 50, "SPD": 50, "DEF": 25 },
+  "Agumon 06": { "HP": 250, "ATK": 55, "SPD": 55, "DEF": 25 },
+  "Black Agumon": { "HP": 300, "ATK": 55, "SPD": 40, "DEF": 25 },
+  "Kokuwamon": { "HP": 450, "ATK": 30, "SPD": 30, "DEF": 45 },
+  "Pillomon": { "HP": 500, "ATK": 25, "SPD": 20, "DEF": 55 },
+  "Yuki Agumon": { "HP": 350, "ATK": 40, "SPD": 45, "DEF": 30 },
+  "Clockmon": { "HP": 1050, "ATK": 80, "SPD": 65, "DEF": 50 },
+  "DarkTyrannomon": { "HP": 1050, "ATK": 80, "SPD": 65, "DEF": 50 },
+  "Deltamon": { "HP": 900, "ATK": 115, "SPD": 55, "DEF": 40 },
+  "GeoGreymon": { "HP": 1000, "ATK": 110, "SPD": 70, "DEF": 60 },
+  "Geremon": { "HP": 750, "ATK": 50, "SPD": 45, "DEF": 40 },
+  "GoldGuardromon": { "HP": 1100, "ATK": 50, "SPD": 30, "DEF": 120 },
+  "GoldNumemon": { "HP": 750, "ATK": 50, "SPD": 45, "DEF": 50 },
+  "Greymon": { "HP": 1000, "ATK": 100, "SPD": 65, "DEF": 60 },
+  "Guardromon": { "HP": 1100, "ATK": 50, "SPD": 30, "DEF": 110 },
+  "Numemon": { "HP": 750, "ATK": 45, "SPD": 40, "DEF": 40 },
+  "ShellNumemon": { "HP": 800, "ATK": 50, "SPD": 30, "DEF": 70 },
+  "Thunderballmon": { "HP": 900, "ATK": 85, "SPD": 75, "DEF": 50 },
+  "Tuskmon": { "HP": 1250, "ATK": 105, "SPD": 40, "DEF": 55 },
+  "Tyrannomon": { "HP": 1150, "ATK": 65, "SPD": 50, "DEF": 70 },
+  "Vdramon": { "HP": 1050, "ATK": 100, "SPD": 90, "DEF": 55 },
+  "VDramon Black": { "HP": 1050, "ATK": 105, "SPD": 75, "DEF": 65 },
+  "VDramon Red": { "HP": 950, "ATK": 110, "SPD": 100, "DEF": 45 },
+  "YukiDarumon": { "HP": 1150, "ATK": 80, "SPD": 50, "DEF": 80 },
+  "AeroVdramon": { "HP": 2250, "ATK": 215, "SPD": 150, "DEF": 110 },
+  "Andromon": { "HP": 2250, "ATK": 100, "SPD": 50, "DEF": 225 },
+  "Big Mamemon": { "HP": 2800, "ATK": 165, "SPD": 70, "DEF": 95 },
+  "Black King Numemon": { "HP": 2400, "ATK": 85, "SPD": 75, "DEF": 200 },
+  "BlackAeroVdramon": { "HP": 2050, "ATK": 235, "SPD": 150, "DEF": 110 },
+  "Gigadramon": { "HP": 1800, "ATK": 220, "SPD": 140, "DEF": 80 },
+  "GigaWaruMonzaemon": { "HP": 2000, "ATK": 255, "SPD": 165, "DEF": 130 },
+  "Mamemon": { "HP": 2000, "ATK": 185, "SPD": 140, "DEF": 75 },
+  "MameTyramon": { "HP": 2200, "ATK": 180, "SPD": 135, "DEF": 85 },
+  "Master Tyranomon": { "HP": 2100, "ATK": 190, "SPD": 95, "DEF": 180 },
+  "Megadramon": { "HP": 1750, "ATK": 210, "SPD": 135, "DEF": 80 },
+  "MetalGreymon": { "HP": 2000, "ATK": 225, "SPD": 130, "DEF": 120 },
+  "MetalGreymon Alter": { "HP": 2050, "ATK": 235, "SPD": 135, "DEF": 125 },
+  "MetalGreymon Virus": { "HP": 1900, "ATK": 220, "SPD": 130, "DEF": 110 },
+  "MetalMamemon": { "HP": 2000, "ATK": 190, "SPD": 140, "DEF": 90 },
+  "MetalTyrannomon": { "HP": 2150, "ATK": 175, "SPD": 85, "DEF": 125 },
+  "Monzaemon": { "HP": 2300, "ATK": 235, "SPD": 135, "DEF": 150 },
+  "Polar Bearmon": { "HP": 2300, "ATK": 110, "SPD": 100, "DEF": 210 },
+  "RizeGreymon": { "HP": 1950, "ATK": 230, "SPD": 140, "DEF": 110 },
+  "Triceramon": { "HP": 2100, "ATK": 125, "SPD": 75, "DEF": 190 },
+  "WaruMonzaemon": { "HP": 2150, "ATK": 245, "SPD": 145, "DEF": 145 }
 };
 const baby1List = ["Botamon"];
 const baby2List = ["Koromon"];
@@ -97,20 +97,20 @@ const perfList = [
   "WaruMonzaemon"
 ];
 const stats = [
-    "DEF",
-    "SPD",
+    "HP",
     "ATK",
-    "HP"
+    "SPD",
+    "DEF"
 ];
 
 const child = document.getElementById('child');
 const adult = document.getElementById('adult');
 const perf = document.getElementById('perf');
 
-const koroBase = [8,8,11,110];
-const childStatList = ['def3','spd3','atk3','hp3'];
-const adultStatList = ['def4','spd4','atk4','hp4'];
-const perfStatList = ['def5','spd5','atk5','hp5'];
+const koroBase = [110,11,8,8];
+const childStatList = ['hp3','atk3','spd3','def3'];
+const adultStatList = ['hp4','spd4','atk4','def4'];
+const perfStatList = ['hp5','atk5','spd5','def5'];
 
 function calcBaseStat(currentDigi,lastDigi,stage) {
     var newStats = [];
