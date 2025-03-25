@@ -109,7 +109,7 @@ const perf = document.getElementById('perf');
 
 const koroBase = [110,11,8,8];
 const childStatList = ['hp3','atk3','spd3','def3'];
-const adultStatList = ['hp4','spd4','atk4','def4'];
+const adultStatList = ['hp4','atk4','spd4','def4'];
 const perfStatList = ['hp5','atk5','spd5','def5'];
 
 function calcBaseStat(currentDigi,lastDigi,stage) {
