@@ -136,10 +136,6 @@ function calcBaseStat(currentDigi,lastDigi,stage) {
     }
 }
 
-calcBaseStat("Agumon","Koromon","Child");
-calcBaseStat("Greymon","Agumon","Adult");
-calcBaseStat("MetalGreymon Virus","Greymon","Perfect");
-
 child.addEventListener('change', calcBaseStat(child.value,"Koromon","Child"));
 adult.addEventListener('change', calcBaseStat(adult.value,child.value,"Adult"));
 perf.addEventListener('change', calcBaseStat(perf.value,adult.value,"Perfect"));

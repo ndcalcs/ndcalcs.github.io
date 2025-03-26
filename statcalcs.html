@@ -557,6 +557,9 @@
   <script src=statcalcs.js></script>
   
   <script>
+    calcBaseStat(child.value,"Koromon","Child");
+    calcBaseStat(adult.value,child.value,"Adult");
+    calcBaseStat(perf.value,adult.value,"Perfect");
     // calculate output when any input changes
     child.oninput = adult.oninput = perf.oninput = function () {
       calcBaseStat(child.value,"Koromon","Child");
