@@ -20,7 +20,7 @@ const stageCaps = {
 
 const foodValues = {
     "None": { "Value": 0.0 },
-    "Anomalous Meat": { "Value": 1.0 },
+    "Anomaly Meat": { "Value": 1.0 },
     "Carrot": { "Value": 0.5 },
     "Chaos Mushroom": { "Value": 2.0 },
     "Devil Fruit": { "Value": 2.0 },
@@ -46,6 +46,20 @@ function training(stage,bond,arrow,food,stat)
     else if (bond == 100)
         bondValue = 0.1;
     
+    if (food == "Judgemental Lemon")
+    switch(stage) {
+        case "Baby 1":
+        case "Baby 2":
+            foodValue = 0;
+            break;
+        case "Adult":
+            foodValue = 1.25;
+            break;
+        case "Perfect":
+            foodValue = 1.5;
+        default:
+    }
+
     counter = arrowValue + foodValue + bondValue;
     document.getElementById("sessionValue").textContent = counter;
 
