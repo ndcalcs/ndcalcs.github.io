@@ -1,0 +1,101 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>ND: Shop Schedule</title>
+<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+
+<header>
+    <h1>NetDriver Calculators and Data</h1>
+    <p>Compiled and coded by Carrow8993</p>
+    <nav>
+      <a href="./index.html">Care</a>
+      <a href="./wr.html">Win Rate</a>
+      <a href="./shop.html">Shop Schedule</a>
+      <a href="./statcalcs.html">Base Stats</a>
+      <a href="./trainingcalc.html">Training</a>
+      <a href="./boxdrops.html">Box Drops</a>
+      <a href="./tipmessages.html">Tip Messages</a>
+      <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+    </nav>
+</header>
+
+<main>
+  <section>
+    <!--<p><center>Current Time: <output id=now></output></center></p>-->
+    <h2><center>Shop is currently <output id=status></output></center></h2>
+    <h3><center><output id=byline></output></center></h3>
+    <p><center>Current special is: <output id=special></output></center></p>
+    <p><center>Next special is: <output id=tomorrow></output></center></p>
+  </section>
+    
+ <section>
+    <h4><center>Schedule for <output id=zone></output></center></h4>
+    <p><center>Shop Opens: <output id=opening></output></center></p>
+    <p><center>Prices Increase: <output id=increase></output></center></p>
+    <p><center>Items Retire: <output id=retire></output></center></p>
+    <p><center>Shop Closes: <output id=closing></output></center></p>
+ </section>
+
+ <section>
+    <h4><center>Specials</center></h4>
+    <center><table>
+        <thead>
+          <tr>
+            <th><center>Day</center></th>
+            <th><center>Item</center></th>
+            <th>Price (min)</th>
+            <th>(max)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><center>Sunday</center></td>
+            <td><center>-</center></td>
+            <td><center>-</center></td>
+            <td><center>-</center></td>
+          </tr>
+          <tr>
+            <td><center>Monday</center></td>
+            <td><center>Fertilizer A</center></td>
+            <td><center>125</center></td>
+            <td><center>162</center></td>
+          </tr>
+          <tr>
+            <td><center>Tuesday</center></td>
+            <td><center>Red Apple</center></td>
+            <td><center>100</center></td>
+            <td><center>130</center></td>
+          </tr>
+          <tr>
+            <td><center>Wednesday</center></td>
+            <td><center>Anomaly Meat</center></td>
+            <td><center>10</center></td>
+            <td><center>13</center></td>
+          </tr>
+          <tr>
+            <td><center>Thursday</center></td>
+            <td><center>Fertilizer B</center></td>
+            <td><center>125</center></td>
+            <td><center>162</center></td>
+          </tr>
+          <tr>
+            <td><center>Friday</center></td>
+            <td><center>Red Apple</center></td>
+            <td><center>100</center></td>
+            <td><center>130</center></td>
+          </tr>
+          <tr>
+            <td><center>Saturday</center></td>
+            <td><center>Anomaly Meat</center></td>
+            <td><center>10</center></td>
+            <td><center>13</center></td>
+          </tr>
+        </tbody>
+      </table></center>
+ </section>
+</main>
+
+<script src=shop.js></script>
+<script>
+timer();
+</script>
+
