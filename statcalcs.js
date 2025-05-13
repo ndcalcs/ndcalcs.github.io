@@ -39,7 +39,7 @@ const digimonDict = {
   "MetalGreymon": { "HP": 2000, "ATK": 225, "SPD": 130, "DEF": 120 },
   "MetalGreymon Alter": { "HP": 2050, "ATK": 235, "SPD": 135, "DEF": 125 },
   "MetalGreymon Virus": { "HP": 1900, "ATK": 220, "SPD": 130, "DEF": 110 },
-  "MetalMamemon": { "HP": 2000, "ATK": 190, "SPD": 140, "DEF": 90 },
+  "MetalMamemon": { "HP": 2000, "ATK": 190, "SPD": 140, "DEF": 120 },
   "MetalTyrannomon": { "HP": 2150, "ATK": 175, "SPD": 85, "DEF": 125 },
   "Monzaemon": { "HP": 2300, "ATK": 235, "SPD": 135, "DEF": 150 },
   "Polar Bearmon": { "HP": 2300, "ATK": 110, "SPD": 100, "DEF": 210 },
