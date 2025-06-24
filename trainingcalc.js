@@ -39,7 +39,7 @@ function training(stage,bond,arrow,food,stat)
     bondValue = 0;
     if (bond <= 49)
         bondValue = 0;
-    else if (bond > 49 && bond < 90 && arrow == "Double")
+    else if (bond > 49 && bond < 91 && arrow == "Double")
         bondValue = 0.1;
     else if (bond == 100 && arrow == "Double")
         bondValue = 0.2;
