@@ -38,6 +38,7 @@ function timer() {
     }
 
     let UTChr = d.getUTCHours();
+    console.log(UTChr);
     let status = String();
     let byline = String();
     if(3 <= UTChr && UTChr <= 5) {
@@ -53,7 +54,7 @@ function timer() {
         status="expensive!";
         byline="Everything is priced 30% higher.";
     }
-    if(0 <= UTChr && UTChr <= 3) {
+    if(0 <= UTChr && UTChr < 3) {
         status="limited!";
         byline="Meat, Bandages, and Drivers only.";
     }
@@ -79,4 +80,20 @@ function timer() {
     }
     document.getElementById("special").textContent = special;
     document.getElementById("tomorrow").textContent = tomorrow;
+}
+
+function getDSTOffset(year) {
+    // Get the offset for a date in January (likely standard time)
+    const jan1 = new Date(year, 0, 1); // Month is 0-indexed (0 = January)
+    const janOffset = jan1.getTimezoneOffset();
+
+    // Get the offset for a date in July (likely daylight saving time)
+    const jul1 = new Date(year, 6, 1); // Month is 0-indexed (6 = July)
+    const julOffset = jul1.getTimezoneOffset();
+
+    // The difference between the two offsets is the DST change
+    // Remember getTimezoneOffset() returns positive for "behind UTC"
+    // So, if DST moves time forward (e.g., from -5 to -4), the offset value
+    // will go from 300 to 240 (less positive), meaning julOffset < janOffset.
+    console.info(output); // This will give you the positive shift (e.g., 60 minutes)
 }
