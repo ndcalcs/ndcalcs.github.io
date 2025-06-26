@@ -31,22 +31,35 @@
         <th><center>ATK</center></th>
         <th><center>SPD</center></th>
         <th><center>DEF</center></th>
+        <th><center>SUM</center></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td id=baby1>Botamon</td>
-        <td id="hp1"><center>50</center></td>
-        <td id="atk1"><center>6</center></td>
-        <td id="spd1"><center>4</center></td>
-        <td id="def1"><center>6</center></td>
+        <td>
+          <select id=baby1 style="margin-top:auto; margin-bottom:auto;">
+              <option value="Botamon">Botamon</option>
+              <option value="Chibickmon">Chibickmon</option>
+          </select>
+          <td><center><label id=hp1></label></center></td>
+          <td><center><label id=atk1></label></center></td>
+          <td><center><label id=spd1></label></center></td>
+          <td><center><label id=def1></label></center></td>
+          <td><center><label id=sum1></label></center></td>
+        </td>
       </tr>
       <tr>
-        <td id=baby2>Koromon</td>
-        <td id="hp2"><center>110</center></td>
-        <td id="atk2"><center>11</center></td>
-        <td id="spd2"><center>8</center></td>
-        <td id="def2"><center>8</center></td>
+        <td>
+          <select id=baby2 style="margin-top:auto; margin-bottom:auto;">
+              <option value="Koromon">Koromon</option>
+              <option value="Pickmon">Pickmon</option>
+          </select>
+          <td><center><label id=hp2></label></center></td>
+          <td><center><label id=atk2></label></center></td>
+          <td><center><label id=spd2></label></center></td>
+          <td><center><label id=def2></label></center></td>
+          <td><center><label id=sum2></label></center></td>
+        </td>
       </tr>
       <tr>
         <td>
@@ -54,8 +67,10 @@
              <option value="Agumon">Agumon</option>
              <option value="Agumon 06">Agumon 06</option>
              <option value="Black Agumon">Black Agumon</option>
+             <option value="Gotsumon">Gottsumon</option>
              <option value="Kokuwamon">Kokuwamon</option>
              <option value="Pillomon">Pillomon</option>
+             <option value="Starmons">Starmons</option>
              <option value="Yuki Agumon">Yuki Agumon</option>
           </select>
         </td>
@@ -63,10 +78,12 @@
         <td><center><label id=atk3></label></center></td>
         <td><center><label id=spd3></label></center></td>
         <td><center><label id=def3></label></center></td>
+        <td><center><label id=sum3></label></center></td>
       </tr>
       <tr>
         <td>
           <select id=adult style="margin-top:auto; margin-bottom:auto;">
+            <option value="Chackmon">Chackmon</option>
             <option value="Clockmon">Clockmon</option>
             <option value="DarkTyrannomon">DarkTyrannomon</option>
             <option value="Deltamon">Deltamon</option>
@@ -76,7 +93,12 @@
             <option value="GoldNumemon">GoldNumemon</option>
             <option value="Greymon">Greymon</option>
             <option value="Guardromon">Guardromon</option>
+            <option value="Icemon">Icemon</option>
+            <option value="Scumon">Scumon</option>
+            <option value="ShootingStarmon">ShootingStarmon</option>
+            <option value="Starmon">Starmon</option>
             <option value="Numemon">Numemon</option>
+            <option value="Scumon">PlatScumon</option>
             <option value="ShellNumemon">ShellNumemon</option>
             <option value="Thunderballmon">Thunderballmon</option>
             <option value="Tuskmon">Tuskmon</option>
@@ -91,17 +113,26 @@
         <td><center><label id="atk4"></label></center></td>
         <td><center><label id="spd4"></label></center></td>
         <td><center><label id="def4"></label></center></td>
+        <td><center><label id="sum4"></label></center></td>
       </tr>
       <tr>
         <td>
           <select id=perf style="margin-top:auto; margin-bottom:auto;">
             <option value="AeroVdramon">AeroVdramon</option>
             <option value="Andromon">Andromon</option>
+            <option value="Blizzardmon">Blizzardmon</option>
             <option value="Big Mamemon">Big Mamemon</option>
             <option value="Black King Numemon">Black King Numemon</option>
             <option value="BlackAeroVdramon">BlackAeroVdramon</option>
+            <option value="DarkSuperStarmon">DarkSuperStarmon</option>
+            <option value="Etemon">Etemon</option>
             <option value="Gigadramon">Gigadramon</option>
             <option value="GigaWaruMonzaemon">GigaWaruMonzaemon</option>
+            <option value="InsekimonDark">Insekimon (Dark)</option>
+            <option value="InsekimonHigh">Insekimon (High)</option>
+            <option value="InsekimonLow">Insekimon (Low)</option>
+            <option value="InsekimonSuper">Insekimon (Super)</option>
+            <option value="KingScumon">KingScumon</option>
             <option value="Mamemon">Mamemon</option>
             <option value="MameTyramon">MameTyramon</option>
             <option value="Master Tyranomon">Master Tyranomon</option>
@@ -114,6 +145,7 @@
             <option value="Monzaemon">Monzaemon</option>
             <option value="Polar Bearmon">Polar Bearmon</option>
             <option value="RizeGreymon">RizeGreymon</option>
+            <option value="SuperStarmon">SuperStarmon</option>
             <option value="Triceramon">Triceramon</option>
             <option value="WaruMonzaemon">WaruMonzaemon</option>
           </select>
@@ -122,14 +154,27 @@
         <td><center><label id="atk5"></label></center></td>
         <td><center><label id="spd5"></label></center></td>
         <td><center><label id="def5"></label></center></td>
+        <td><center><label id="sum5"></label></center></td>
+      </tr>
+      <tr>
+        <td>
+          <select id=ult style="margin-top:auto; margin-bottom:auto;">
+            <option value="Daipenmon">Daipenmon</option>
+            <option value="Machinedramon">Machinedramon</option>
+            <option value="MetalEtemon">MetalEtemon</option>
+            <option value="PlatinumNumemon">PlatinumNumemon</option>
+          </select>
+        </td>
+        <td><center><label id="hp6"></label></center></td>
+        <td><center><label id="atk6"></label></center></td>
+        <td><center><label id="spd6"></label></center></td>
+        <td><center><label id="def6"></label></center></td>
+        <td><center><label id="sum6"></label></center></td>
       </tr>
     </tbody>
   </table>
     -Burpmon has the same base stats as its predecessor, but less than half stats in battle<br>
-    -Scumon is ~1.65 times child base stats<br>
-    -PlatScumon gives no boost<br>
-    -KingScumon is ~1.4 times Plat/Scumon base stats<br>
-    -Etemon to be solved
+    -Scumon stats are accurate, but evolution values are inaccurate and mostly just placeholder values<br>
   </section>
   <section>
     <p>
@@ -139,10 +184,10 @@
       <center>b<sub>2</sub> = i<sub>2</sub> + b<sub>1</sub> - (0.6i<sub>1</sub>)</center>
     <p>
       where i<sub>1</sub> & i<sub>2</sub> are the innate stats for the first and second digimon respectively and where b<sub>1</sub>
-      & b<sub>2</sub> are their associated base stats. Botamon's base stats are equal to its innate stats,
-      i.e. i<sub>1</sub>=b<sub>1</sub>. b<sub>1</sub> & b<sub>2</sub> are gathered from screenshots players have uploaded
+      & b<sub>2</sub> are their associated base stats. Baby1 base stats are necessarily equal to its innate stats,
+      i.e. i<sub>1</sub>=b<sub>1</sub>. Values for b<sub>1</sub> & b<sub>2</sub> were gathered from screenshots players have uploaded
       to the Discord, leaving i<sub>2</sub> as the only unknown to be iteratively solved per stat per digimon forwards from
-      Botamon. Tables for innate stats are below. Also present is a SUM value, calculated according to:
+      Baby1. Tables for innate stats are below. Also present is a SUM value, calculated according to:
     </p>
       <center>SUM = (HP/10) + ATK + SPD + DEF</center>
   </section>
@@ -560,14 +605,20 @@
   <script src=statcalcs.js></script>
   
   <script>
-    calcBaseStat(child.value,"Koromon","Child");
+    calcBaseStat(baby1.value,baby1.value,"Baby1");
+    calcBaseStat(baby2.value,baby1.value,"Baby2");
+    calcBaseStat(child.value,baby2.value,"Child");
     calcBaseStat(adult.value,child.value,"Adult");
     calcBaseStat(perf.value,adult.value,"Perfect");
+    calcBaseStat(ult.value,perf.value,"Ultimate");
     // calculate output when any input changes
-    child.oninput = adult.oninput = perf.oninput = function () {
-      calcBaseStat(child.value,"Koromon","Child");
+    baby1.oninput = baby2.oninput = child.oninput = adult.oninput = perf.oninput = ult.oninput = function () {
+      calcBaseStat(baby1.value,baby1.value,"Baby1");
+      calcBaseStat(baby2.value,baby1.value,"Baby2");
+      calcBaseStat(child.value,baby2.value,"Child");
       calcBaseStat(adult.value,child.value,"Adult");
       calcBaseStat(perf.value,adult.value,"Perfect");
+      calcBaseStat(ult.value,perf.value,"Ultimate");
     };
   </script>
 
