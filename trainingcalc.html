@@ -14,9 +14,9 @@
       <a href="./trainingcalc.html">Training</a>
       <a href="./boxdrops.html">Box Drops</a>
       <a href="./tipmessages.html">Tip Messages</a>
-      <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
-      <a target="_blank" href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
-      <a target="_blank" href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
+      <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+      <a href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
+      <a href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
     </nav>
 </header>
 
@@ -106,6 +106,33 @@
 -Judgemental Lemons effect is decreased by CMs<br>
 -Lucky Apple not listed due to random factor (yet to be fully solved)<br>
 -Solar/Lunar mushrooms not listed due to inability to activate training bonus<br>
+</section>
+
+<section>
+<h5><center>Target Training Calculator</center></h5>
+<center>Calculate how many training sessions you need to hit your target training!</center>
+<center>Utilizes stage and session values from above calculator, use that one first.</center>
+<table style="margin-left:auto; margin-right:auto;">
+  <tbody>
+    <tr>
+      <td><center>Current Training %</center></td>
+      <td><center>
+        <input type=number id=currentTraining value=0 max=100 min=0></input>
+      </center></td>
+    </tr>
+    <tr>
+      <td><center>Target Training %</center></td>
+      <td><center>
+        <input type=number id=targetTraining value=0 max=100 min=0></input>
+      </center></td>
+    </tr>
+    <tr>
+      <td><center><b>Session Count</b>*</center></td>
+      <td><center id=sessionCount></center></td>
+    </tr>
+  </tbody>
+</table>
+<center>*rounded up</center>
 </section>
 
 <section>
@@ -312,6 +339,18 @@
         <td>Removes 3 red arrows</td>
       </tr>
       <tr>
+        <td>Mega-Carrot</td>
+        <td><center>0.5</center></td>
+        <td><center>1 ATK/SPD, ~1.3% HP</center></td>
+        <td>Active for <b>three</b> training sessions.</td>
+      </tr>
+      <tr>
+        <td>Mega-Vegetable</td>
+        <td><center>0</center></td>
+        <td><center>0</center></td>
+        <td>Adds 1 double arrow. Active for <b>three</b> training sessions.</td>
+      </tr>
+      <tr>
         <td>Miraculous Tomato</td>
         <td><center>1.0</center></td>
         <td><center>2 ATK/SPD, ~2.6% HP</center></td>
@@ -327,7 +366,7 @@
         <td>Sports Drink</td>
         <td><center>0</center></td>
         <td><center>0</center></td>
-        <td>Removes 1 red arrow</td>
+        <td>Prevents hunger loss from training and removes 1 red arrow <b>twice</b>.</td>
       </tr>
       <tr>
       <tr>
@@ -339,28 +378,37 @@
     </tbody>
   </table>
   -Listed session values and stat gains are before arrow effect granted by food<br>
-  -Poop and Crystal Acorns are boosted by training food<br>
   -Solar/Lunar mushrooms are supposed to provide a training boost, but either bugged or too specific to identify after extensive testing
 </section>
 </main>
 <script src=trainingcalc.js></script>
   
 <script>
-  training(
-      stage.value,
-      Number(bond.value),
-      arrow.value,
-      food.value,
-      stat.value
-  );
-  // calculate output when any input changes
-  stage.oninput = bond.oninput = arrow.oninput = food.oninput = stat.oninput = function () {
+  targetCalc(
+    stage.value,
+    Number(currentTraining.value),
+    Number(targetTraining.value),
     training(
       stage.value,
       Number(bond.value),
       arrow.value,
       food.value,
       stat.value
+    )
+  );
+  // calculate output when any input changes
+  stage.oninput = bond.oninput = arrow.oninput = food.oninput = stat.oninput = currentTraining.oninput = targetTraining.oninput = function () {
+    targetCalc(
+      stage.value,
+      Number(currentTraining.value),
+      Number(targetTraining.value),
+      training(
+        stage.value,
+        Number(bond.value),
+        arrow.value,
+        food.value,
+        stat.value
+      )
     );
   };
 </script>
