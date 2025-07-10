@@ -79,7 +79,7 @@ const childList = [
   "Agumon",
   "Agumon 06",
   "Black Agumon",
-  "Gotsumon",
+  "Gottsumon",
   "Kokuwamon",
   "Pillomon",
   "Starmons",
@@ -255,4 +255,4 @@ baby2.addEventListener('change', calcBaseStat(baby2.value,baby1.value,"Baby2"));
 child.addEventListener('change', calcBaseStat(child.value,baby2.value,"Child"));
 adult.addEventListener('change', calcBaseStat(adult.value,child.value,"Adult"));
 perf.addEventListener('change', calcBaseStat(perf.value,adult.value,"Perfect"));
-perf.addEventListener('change', calcBaseStat(ult.value,perf.value,"Ultimate"));
+ult.addEventListener('change', calcBaseStat(ult.value,perf.value,"Ultimate"));
