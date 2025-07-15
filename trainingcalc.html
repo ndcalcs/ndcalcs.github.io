@@ -40,6 +40,7 @@
            <option value="Child">Child</option>
            <option value="Adult">Adult</option>
            <option value="Perfect">Perfect</option>
+           <option value="Perfect">Ultimate</option>
         </select>
       </center></td>
     </tr>
@@ -68,7 +69,9 @@
         <option value="Chaos Mushroom">Chaos Mushroom</option>
         <option value="Devil Fruit">Devil Fruit (matching)</option>
         <option value="Judgemental Lemon">Judgemental Lemon</option>
+        <option value="Lunar Mushroom">Lunar Mushroom (0-1)</option>
         <option value="Miraculous Tomato">Miraculous Tomato</option>
+        <option value="Solar Mushroom">Solar Mushroom (12-13)</option>
       </select></td>
     </tr>
     <tr>
@@ -101,11 +104,11 @@
   </tbody>
 </table>
 -Bond, Arrow, and Food bonuses are all additive<br>
--Yet to test negative bond penalties<br>
+-Solar/Lunar mushrooms assume correct server hour is used, UTC-3 (ARG)<br>
 -Anomalous Meat assumes Mutant<br>
--Judgemental Lemons effect is decreased by CMs<br>
+-Judgemental Lemons effect is decreased by CMs, assumes 0<br>
 -Lucky Apple not listed due to random factor (yet to be fully solved)<br>
--Solar/Lunar mushrooms not listed due to inability to activate training bonus<br>
+-Yet to test negative bond penalties<br>
 </section>
 
 <section>
@@ -334,9 +337,9 @@
       </tr>
       <tr>
         <td>Lunar Mushroom</td>
+        <td><center>2.0</center></td>
         <td><center>0</center></td>
-        <td><center>0</center></td>
-        <td>Removes 3 red arrows</td>
+        <td>Removes 3 red arrows at correct time. Gives training boost between 0000-0100 server time</td>
       </tr>
       <tr>
         <td>Mega-Carrot</td>
@@ -358,9 +361,9 @@
       </tr>
       <tr>
         <td>Solar Mushroom</td>
+        <td><center>2</center></td>
         <td><center>0</center></td>
-        <td><center>0</center></td>
-        <td>Adds 2 double arrows</td>
+        <td>Adds 2 double arrows correct time. Gives training boost between 1200-1300 server time</td>
       </tr>
       <tr>
         <td>Sports Drink</td>

@@ -26,7 +26,9 @@ const foodValues = {
     "Chaos Mushroom": 2.0,
     "Devil Fruit": 2.0,
     "Judgemental Lemon": 1.0,
-    "Miraculous Tomato": 1.0
+    "Miraculous Tomato": 1.0,
+    "Lunar Mushroom": 2.0,
+    "Solar Mushroom": 2.0
 }
 
 function training(stage,bond,arrow,food,stat)
