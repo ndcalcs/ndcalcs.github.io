@@ -313,11 +313,14 @@ function plan(stage, initHunger, initTraining, bond){
         cellHungerBefore = document.getElementById("hunger-before-" + sessions);
         cellHungerAfter = document.getElementById("hunger-after-" + sessions);
         cellTraining = document.getElementById("training-" + sessions);
-        pillCount = document.getElementById('pills-' + sessions).value;
+        pillCount = 0;
+        if (sessions > 0) { pillCount = document.getElementById('pills-' + sessions).value; }
 
         let foodFill = Math.floor(fillMult * foodDictionary[strFood]["fill"]);
         currentHunger = currentHunger + foodFill;
         if (currentHunger > 100) { currentHunger = 100; };
+        currentHunger = currentHunger - (pillCount * 5 * fillMult);
+        if (currentHunger < 0) { currentHunger = 0; };
         cellHungerBefore.textContent = currentHunger;
         cellHungerBefore.value = currentHunger;
 
@@ -326,15 +329,14 @@ function plan(stage, initHunger, initTraining, bond){
         if (foodDictionary[strFood]["arrow"] == "Double") { arrow = "Double"; };
 
         if (sessions > 0) {
-            currentHunger = currentHunger - 5;
-            currentHunger = currentHunger - (pillCount * 5 * fillMult);
-            if (currentHunger < 0) { currentHunger = 0; };
             var train = training(stage, bond, arrow, strFood);
             train = train + foodDictionary[strFood]["instaStats"];
             train = train/sessionCap*100;
             if (strFood == "Lemon of Judgement") { train = train + 6; };
             currentTraining = currentTraining + train;
             if (currentTraining > 100) { currentTraining = 100; };
+            currentHunger = currentHunger - 5;
+            if (currentHunger < 0) { currentHunger = 0; };
         };
 
         cellHungerAfter.textContent = currentHunger;
@@ -390,30 +392,8 @@ function initTable() {
     const tableBody = document.querySelector('#trainingTable tbody');
     
     for (let sessions = 1; sessions <= 10; sessions++) {
-
-        // --- Creates the first row for the current session (Hunger, Session Count, etc.) ---
         let firstRow = tableBody.insertRow();
-        
-        let sessionCountCell = firstRow.insertCell();
-        sessionCountCell.textContent = sessions;
-
-        let hungerBeforeCell = firstRow.insertCell();
-        hungerBeforeCell.textContent = "-";
-        hungerBeforeCell.id = "hunger-before-" + sessions;
-
-        let hungerAfterCell = firstRow.insertCell();
-        hungerAfterCell.textContent = "-";
-        hungerAfterCell.id = "hunger-after-" + sessions;
-
-        let trainingCell = firstRow.insertCell();
-        trainingCell.textContent = "-";
-        trainingCell.id = "training-" + sessions;
-
-        // --- Creates the second row for the current session (Food & Pills) ---
-        let secondRow = tableBody.insertRow();
-
-        // Food: dropdown fills the first two cells using colspan
-        let foodCell = secondRow.insertCell();
+        let foodCell = firstRow.insertCell();
         foodCell.colSpan = 2;
         foodCell.textContent = "Food:";
         
@@ -428,8 +408,7 @@ function initTable() {
         foodCell.appendChild(foodSelect);
         foodCell.id = "food-" + sessions;
 
-        // Pills: input fills the next two cells using colspan
-        let pillsCell = secondRow.insertCell();
+        let pillsCell = firstRow.insertCell();
         pillsCell.colSpan = 2;
         pillsCell.textContent = "Pills:";
         
@@ -439,5 +418,22 @@ function initTable() {
         pillsInput.min = "0";
         pillsInput.defaultValue = "0";
         pillsCell.appendChild(pillsInput);
+
+        let secondRow = tableBody.insertRow();
+        
+        let sessionCountCell = secondRow.insertCell();
+        sessionCountCell.textContent = sessions;
+
+        let hungerBeforeCell = secondRow.insertCell();
+        hungerBeforeCell.textContent = "-";
+        hungerBeforeCell.id = "hunger-before-" + sessions;
+
+        let hungerAfterCell = secondRow.insertCell();
+        hungerAfterCell.textContent = "-";
+        hungerAfterCell.id = "hunger-after-" + sessions;
+
+        let trainingCell = secondRow.insertCell();
+        trainingCell.textContent = "-";
+        trainingCell.id = "training-" + sessions;
     }
 }
