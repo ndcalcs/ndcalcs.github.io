@@ -1,0 +1,120 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>ND: Training Planner</title>
+<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>  
+<style>
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  select {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+</style>
+<header>
+    <h1>NetDriver Calculators and Data</h1>
+    <p>Compiled and coded by Carrow8993</p>
+    <nav>
+      <a href="./index.html">Care</a>
+      <a href="./wr.html">Win Rate</a>
+      <a href="./shop.html">Shop Schedule</a>
+      <a href="./statcalcs.html">Base Stats</a>
+      <a href="./trainingcalc.html">Training</a>
+      <a href="./planner.html">Planner</a>
+      <a href="./boxdrops.html">Box Drops</a>
+      <a href="./tipmessages.html">Tip Messages</a>
+      <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+      <a href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
+      <a href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
+    </nav>
+</header>
+</head>
+<body>
+
+  <h1><center>Training Planner</center></h1>
+<section>
+  <table>
+    <tbody>
+      <tr>
+        <td>Stage</td>
+        <td>
+          <select id=stage>
+            <option value="Baby 1">Baby 1</option>
+            <option value="Baby 2">Baby 2</option>
+            <option value="Child">Child</option>
+            <option value="Adult">Adult</option>
+            <option value="Perfect">Perfect</option>
+          </select>
+        </td>
+      </tr>
+          <tr>
+        <td>Current Hunger %</td>
+        <td>
+          <input type=number id=currentHunger value=0 max=100 min=0></input>
+        </td>
+      </tr>
+      <tr>
+        <td>Current Training %</td>
+        <td>
+          <input type=number id=currentTraining value=0 max=100 min=0></input>
+        </td>
+      </tr>
+      <tr>
+        <td>Bond*</td>
+        <td>
+          <input type=number id=bond value=0 max=100 min=0></input>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<center>The planner assumes you hit the best arrow possible.</center>
+</section>
+<section>
+  <table id="trainingTable">
+    <thead>
+      <tr>
+        <th>Session Count</th>
+        <th>Hunger Before</th>
+        <th>Hunger After</th>
+        <th>Training% After</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
+</section>
+<section>
+  *Bond values under 0 still unimplemented haha<br>
+  *Planner does not increase bond from food or training, value above is the same value used in all 10 sessions.<br>
+</section>
+<script src=planner.js></script>
+<script>
+    initTable();
+    stage.oninput = currentHunger.oninput = currentTraining.oninput = bond.oninput = function () {
+      plan(stage.value,Number(currentHunger.value),Number(currentTraining.value),Number(bond.value));
+    };
+    for (let sessions = 1; sessions <= 10; sessions++) {
+      document.getElementById('food-' + sessions).addEventListener('change', function (event) {
+        plan(
+          stage.value,
+          Number(currentHunger.value),
+          Number(currentTraining.value),
+          Number(bond.value)
+        );
+      });
+      document.getElementById('pills-' + sessions).addEventListener('change', function (event) {
+        plan(
+          stage.value,
+          Number(currentHunger.value),
+          Number(currentTraining.value),
+          Number(bond.value)
+        );
+      });
+    };
+</script>

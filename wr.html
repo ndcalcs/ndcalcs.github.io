@@ -12,6 +12,7 @@
       <a href="./shop.html">Shop Schedule</a>
       <a href="./statcalcs.html">Base Stats</a>
       <a href="./trainingcalc.html">Training</a>
+      <a href="./planner.html">Planner</a>
       <a href="./boxdrops.html">Box Drops</a>
       <a href="./tipmessages.html">Tip Messages</a>
       <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
@@ -24,113 +25,87 @@
     <h2><center>Win Rate Calculator</center></h2>
     <p><center>Rounded to the nearest percent (same rounding as the game uses on the stat sheet and digivolve requirements).
       Minimum wins and losses for the fewest battles tabulated below. Base tier digimon have a 10% lower minimum than stronger digimon.</center></p>
-
-      <table style="margin-left:auto; margin-right:auto;">
-        <thead>
-          <tr>
-            <th><center>Stage</center></th>
-            <th><center>WR</center></th>
-            <th><center>Battles</center></th>
-            <th><center>Win-Loss</center></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><center>Child (base)</center></td>
-            <td><center>50%</center></td>
-            <td><center>15</center></td>
-            <td><center>8-7</center></td>
-          </tr>
-          <tr>
-            <td><center>Child (++)</center></td>
-            <td><center>60%</center></td>
-            <td><center>15</center></td>
-            <td><center>9-6</center></td>
-          </tr>
-          <tr>
-            <td><center>Adult (base)</center></td>
-            <td><center>60%</center></td>
-            <td><center>25</center></td>
-            <td><center>15-10</center></td>
-          </tr>
-          <tr>
-            <td><center>Adult (++)</center></td>
-            <td><center>70%</center></td>
-            <td><center>25</center></td>
-            <td><center>18-7</center></td>
-          </tr>
-          <tr>
-            <td><center>Perfect</center></td>
-            <td><center>80%</center></td>
-            <td><center>50</center></td>
-            <td><center>40-10</center></td>
-          </tr>
-       </tbody>
-      </table>
+      
+  <section><center>
+  <label for=w>Wins</label>
+  <input type=number id=w min=0 value=0>
   
-    <section><center>
-    <label for=w>Wins</label>
-    <input type=number id=w min=0 value=0>
-    
-    <label for=l>Losses</label>
-    <input type=number id=l min=0 value=0>
-    
-    <label for=r>Current W/L: <output id=r></output></label>
+  <label for=l>Losses</label>
+  <input type=number id=l min=0 value=0>
+  
+  <label for=r>Current W/L: <output id=r></output></label>
   </center></section>
-    
   <table style="margin-left:auto; margin-right:auto;">
-    <thead>
-      <tr>
-        <th><center>Total Battles</center></th>
-        <th><center>Win</center></th>
-        <th><center>Lose</center></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><center id=b1></center></td>
-        <td><center id=w1></center></td>
-        <td><center id=l1></center></td>
-      </tr>
-      <tr>
-        <td><center id=b2></center></td>
-        <td><center id=w2></center></td>
-        <td><center id=l2></center></td>
-      </tr>
-      <tr>
-        <td><center id=b3></center></td>
-        <td><center id=w3></center></td>
-        <td><center id=l3></center></td>
-      </tr>
-      <tr>
-        <td><center id=b4></center><label><b>Child AFK Max</b></label></td>
-        <td><center id=w4></center></td>
-        <td><center id=l4></center></td>
-      </tr>
-      <tr>
-        <td><center id=b5></center></td>
-        <td><center id=w5></center></td>
-        <td><center id=l5></center></td>
-      </tr>
-      <tr>
-        <td><center id=b6></center><label><b>Adult AFK Max</b></label></td>
-        <td><center id=w6></center></td>
-        <td><center id=l6></center></td>
-      </tr>
-      <tr>
-        <td><center id=b7></center></td>
-        <td><center id=w7></center></td>
-        <td><center id=l7></center></td>
-      </tr>
-      <tr>
-        <td><center id=b8></center><label><b>Perfect AFK Max</b></label></td>
-        <td><center id=w8></center></td>
-        <td><center id=l8></center></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th><center>Total Battles</center></th>
+      <th><center>W/L?</center></th>
+      <th><center>Result</center></th>
+      <th><center>Win</center></th>
+      <th><center>Lose</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><center id=b1></center></td>
+      <td><center><label class="switch"><input type="checkbox" id="s1"><span class="slider round"></span></label></center></td>
+      <td><center id=r1></center></td>
+      <td><center id=w1></center></td>
+      <td><center id=l1></center></td>
+    </tr>
+    <tr>
+      <td><center id=b2></center></td>
+      <td><center><label class="switch"><input type="checkbox" id="s2"><span class="slider round"></span></label></center></td>
+      <td><center id=r2></center></td>
+      <td><center id=w2></center></td>
+      <td><center id=l2></center></td>
+    </tr>
+    <tr>
+      <td><center id=b3></center></td>
+      <td><center><label class="switch"><input type="checkbox" id="s3"><span class="slider round"></span></label></center></td>
+      <td><center id=r3></center></td>
+      <td><center id=w3></center></td>
+      <td><center id=l3></center></td>
+    </tr>
+    <tr>
+      <td><center id=b4></center><label><b>Child AFK Max</b></label></td>
+      <td><center><label class="switch"><input type="checkbox" id="s4"><span class="slider round"></span></label></center></td>
+      <td><center id=r4></center></td>
+      <td><center id=w4></center></td>
+      <td><center id=l4></center></td>
+    </tr>
+    <tr>
+      <td><center id=b5></center></td>
+      <td><center><label class="switch"><input type="checkbox" id="s5"><span class="slider round"></span></label></center></td>
+      <td><center id=r5></center></td>
+      <td><center id=w5></center></td>
+      <td><center id=l5></center></td>
+    </tr>
+    <tr>
+      <td><center id=b6></center><label><b>Adult AFK Max</b></label></td>
+      <td><center><label class="switch"><input type="checkbox" id="s6"><span class="slider round"></span></label></center></td>
+      <td><center id=r6></center></td>
+      <td><center id=w6></center></td>
+      <td><center id=l6></center></td>
+    </tr>
+    <tr>
+      <td><center id=b7></center></td>
+      <td><center><label class="switch"><input type="checkbox" id="s7"><span class="slider round"></span></label></center></td>
+      <td><center id=r7></center></td>
+      <td><center id=w7></center></td>
+      <td><center id=l7></center></td>
+    </tr>
+    <tr>
+      <td><center id=b8></center><label><b>Perfect AFK Max</b></label></td>
+      <td><center><label class="switch"><input type="checkbox" id="s8"><span class="slider round"></span></label></center></td>
+      <td><center id=r8></center></td>
+      <td><center id=w8></center></td>
+      <td><center id=l8></center></td>
+    </tr>
+  </tbody>
+</table>
   
-  </main>
+</main>
   
   <script src=wr.js></script>
   
@@ -145,3 +120,73 @@
     };
   </script>
 
+
+
+
+
+
+
+<style>
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+}
+
+/* Hide original checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CD5C5C; /* Muted Red for off position */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; /* Adjust size as needed */
+  width: 16px; /* Adjust size as needed */
+  left: 2px; /* Adjust position as needed */
+  bottom: 2px; /* Adjust position as needed */
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00C853; /* Muted Green for on position */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00C853; /* Muted Green for focus */
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px); /* Adjust based on width of slider and before */
+  -ms-transform: translateX(20px); /* Adjust based on width of slider and before */
+  transform: translateX(20px); /* Adjust based on width of slider and before */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px; /* Adjust to half of height for perfect roundness */
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>

@@ -66,7 +66,9 @@ const digimonDict = {
   "Machinedramon": {"Tama": "V0", "HP": 1700, "ATK": 170, "SPD": 70, "DEF": 140},
   "Blizzardmon": {"Tama": "SP", "HP": 2100, "ATK": 160, "SPD": 120, "DEF": 160},
   "Etemon": {"Tama": "M", "HP": 2000, "ATK": 239, "SPD": 157, "DEF": 152},
-  "Chackmon": {"Tama": "SP", "Type": "Free", "HP": 950, "ATK": 80, "SPD": 70, "DEF": 80}
+  "Chackmon": {"Tama": "SP", "Type": "Free", "HP": 950, "ATK": 80, "SPD": 70, "DEF": 80},
+  "Scumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0},
+  "KingScumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0}
 };
 
 // Lists of Digimon for each evolutionary stage.
@@ -101,6 +103,7 @@ const adultList = [
   "Guardromon",
   "Icemon",
   "Numemon",
+  "Scumon",
   "ShellNumemon",
   "ShootingStarmon",
   "Starmon",
@@ -127,6 +130,7 @@ const perfList = [
   "InsekimonHigh",
   "InsekimonLow",
   "InsekimonSuper",
+  "KingScumon",
   "Mamemon",
   "MameTyramon",
   "Master Tyranomon",
@@ -353,8 +357,7 @@ function sortInnateTable(digimonList, sortKey, targetElementId) {
     });
 
     let tableHTML = `
-        <center><h4>${targetElement.id.replace(/-/g, ' ')}</h4></center>
-        <div style="text-align: center; margin-bottom: 10px;">
+        <center><h4>${targetElement.id.replace(/-/g, ' ')}</h4>
             <label for="sort-${targetElementId}">Sort by:
             <select id="sort-${targetElementId}">
                 <option value="name" ${sortKey === 'name' ? 'selected' : ''}>Name</option>
@@ -363,8 +366,7 @@ function sortInnateTable(digimonList, sortKey, targetElementId) {
                 <option value="SPD" ${sortKey === 'SPD' ? 'selected' : ''}>SPD</option>
                 <option value="DEF" ${sortKey === 'DEF' ? 'selected' : ''}>DEF</option>
                 <option value="SUM" ${sortKey === 'SUM' ? 'selected' : ''}>SUM</option>
-            </select></label>
-        </div>
+            </select></label></center>
         <table style="margin-left:auto; margin-right:auto;">
             <thead>
                 <tr>
