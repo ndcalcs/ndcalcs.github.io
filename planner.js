@@ -319,7 +319,7 @@ function plan(stage, initHunger, initTraining, bond){
         let foodFill = Math.floor(fillMult * foodDictionary[strFood]["fill"]);
         currentHunger = currentHunger + foodFill;
         if (currentHunger > 100) { currentHunger = 100; };
-        currentHunger = currentHunger - (pillCount * 5 * fillMult);
+        currentHunger = currentHunger - (pillCount * 10 * fillMult);
         if (currentHunger < 0) { currentHunger = 0; };
         cellHungerBefore.textContent = currentHunger;
         cellHungerBefore.value = currentHunger;
