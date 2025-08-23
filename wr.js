@@ -21,20 +21,21 @@ function targetWR(w,l,target) {
     return 0;
   if((w == 0) && (l == 0))
     return 0;
-  if(target == 0)
+  if((target == 0) || (target==100))
     return 0;
 
   var current = (Math.round(w/(w+l)*100));
   if ( current == target ) { return 0; };
   var i = 0;
 
-  if (target < current) {
-    while ( current < target ) {
+  if (current > target) {
+    while ( current > target ) {
       i = i + 1;
       current = (Math.round(w/(w+l+i)*100));
+      if (current < target) { i = i - 1; };
     };
-  } else if (current > target) {
-    while ( current > target ) {
+  } else if (current < target) {
+    while ( current < target ) {
       i = i + 1;
       current = (Math.round((w+i)/(w+l+i)*100));
     };
