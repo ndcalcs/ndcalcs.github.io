@@ -39,8 +39,6 @@
   <thead>
     <tr>
       <th><center>Total Battles</center></th>
-      <th><center>W/L?</center></th>
-      <th><center>Result</center></th>
       <th><center>Win</center></th>
       <th><center>Lose</center></th>
     </tr>
@@ -48,57 +46,41 @@
   <tbody>
     <tr>
       <td><center id=b1></center></td>
-      <td><center><label class="switch"><input type="checkbox" id="s1"><span class="slider round"></span></label></center></td>
-      <td><center id=r1></center></td>
       <td><center id=w1></center></td>
       <td><center id=l1></center></td>
     </tr>
     <tr>
       <td><center id=b2></center></td>
-      <td><center><label class="switch"><input type="checkbox" id="s2"><span class="slider round"></span></label></center></td>
-      <td><center id=r2></center></td>
       <td><center id=w2></center></td>
       <td><center id=l2></center></td>
     </tr>
     <tr>
       <td><center id=b3></center></td>
-      <td><center><label class="switch"><input type="checkbox" id="s3"><span class="slider round"></span></label></center></td>
-      <td><center id=r3></center></td>
       <td><center id=w3></center></td>
       <td><center id=l3></center></td>
     </tr>
     <tr>
       <td><center id=b4></center><label><b>Child AFK Max</b></label></td>
-      <td><center><label class="switch"><input type="checkbox" id="s4"><span class="slider round"></span></label></center></td>
-      <td><center id=r4></center></td>
       <td><center id=w4></center></td>
       <td><center id=l4></center></td>
     </tr>
     <tr>
       <td><center id=b5></center></td>
-      <td><center><label class="switch"><input type="checkbox" id="s5"><span class="slider round"></span></label></center></td>
-      <td><center id=r5></center></td>
       <td><center id=w5></center></td>
       <td><center id=l5></center></td>
     </tr>
     <tr>
       <td><center id=b6></center><label><b>Adult AFK Max</b></label></td>
-      <td><center><label class="switch"><input type="checkbox" id="s6"><span class="slider round"></span></label></center></td>
-      <td><center id=r6></center></td>
       <td><center id=w6></center></td>
       <td><center id=l6></center></td>
     </tr>
     <tr>
       <td><center id=b7></center></td>
-      <td><center><label class="switch"><input type="checkbox" id="s7"><span class="slider round"></span></label></center></td>
-      <td><center id=r7></center></td>
       <td><center id=w7></center></td>
       <td><center id=l7></center></td>
     </tr>
     <tr>
       <td><center id=b8></center><label><b>Perfect AFK Max</b></label></td>
-      <td><center><label class="switch"><input type="checkbox" id="s8"><span class="slider round"></span></label></center></td>
-      <td><center id=r8></center></td>
       <td><center id=w8></center></td>
       <td><center id=l8></center></td>
     </tr>
@@ -119,74 +101,3 @@
       updateTableEntry();
     };
   </script>
-
-
-
-
-
-
-
-<style>
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px; /* Adjust width as needed */
-  height: 20px; /* Adjust height as needed */
-}
-
-/* Hide original checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #CD5C5C; /* Muted Red for off position */
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px; /* Adjust size as needed */
-  width: 16px; /* Adjust size as needed */
-  left: 2px; /* Adjust position as needed */
-  bottom: 2px; /* Adjust position as needed */
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #00C853; /* Muted Green for on position */
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #00C853; /* Muted Green for focus */
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(20px); /* Adjust based on width of slider and before */
-  -ms-transform: translateX(20px); /* Adjust based on width of slider and before */
-  transform: translateX(20px); /* Adjust based on width of slider and before */
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 20px; /* Adjust to half of height for perfect roundness */
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-</style>
