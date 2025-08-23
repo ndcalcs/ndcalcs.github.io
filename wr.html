@@ -2,6 +2,25 @@
   <meta charset=utf-8>
   <title>ND: WR Calculator</title>
   <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+  <style>
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  select {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .table-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+</style>
 
 <header>
     <h1>NetDriver Calculators and Data</h1>
@@ -22,20 +41,73 @@
 </header>
 
   <main>
-    <h2><center>Win Rate Calculator</center></h2>
-    <p><center>Rounded to the nearest percent (same rounding as the game uses on the stat sheet and digivolve requirements).
-      Minimum wins and losses for the fewest battles tabulated below. Base tier digimon have a 10% lower minimum than stronger digimon.</center></p>
-      
-  <section><center>
-  <label for=w>Wins</label>
-  <input type=number id=w min=0 value=0>
-  
-  <label for=l>Losses</label>
-  <input type=number id=l min=0 value=0>
-  
-  <label for=r>Current W/L: <output id=r></output></label>
-  </center></section>
-  <table style="margin-left:auto; margin-right:auto;">
+  <section>
+    <h3><center>Win Rate Calculator</center></h3>
+    <p><center>(Rounded to the nearest percent)</center></p>
+  </section>
+  <section>
+  <div class="table-container">   
+    <div style="margin-top:auto; margin-bottom:auto;"><center>
+    <label for=w>Wins</label>
+    <input type=number id=w min=0 value=0>
+    
+    <label for=l>Losses</label>
+    <input type=number id=l min=0 value=0>
+    
+    <label for=r>Current W/L: <output id=r></output></label></br>
+
+    <label for=target>Target WR%:<input type=number id=target min=0 max=100 value=0></label>
+
+    <label for=req>Required W/L: <output id=req></output></label>
+
+    </center></div>
+        <table>
+          <thead>
+            <tr>
+              <th><center>Target</center></th>
+              <th><center>WR</center></th>
+              <th><center>Battles</center></th>
+              <th><center>Win-Loss</center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><center>Adult (Base)</center></td>
+              <td><center>50%</center></td>
+              <td><center>15</center></td>
+              <td><center>8-7</center></td>
+            </tr>
+            <tr>
+              <td><center>Adult (++)</center></td>
+              <td><center>60%</center></td>
+              <td><center>15</center></td>
+              <td><center>9-6</center></td>
+            </tr>
+            <tr>
+              <td><center>Perfect (Base)</center></td>
+              <td><center>60%</center></td>
+              <td><center>25</center></td>
+              <td><center>15-10</center></td>
+            </tr>
+            <tr>
+              <td><center>Perfect (++)</center></td>
+              <td><center>70%</center></td>
+              <td><center>25</center></td>
+              <td><center>18-7</center></td>
+            </tr>
+            <tr>
+              <td><center>Ultimate</center></td>
+              <td><center>80%</center></td>
+              <td><center>50</center></td>
+              <td><center>40-10</center></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+</section>
+</section>
+<h4><center>Streak Table</center></h4>
+  <table>
   <thead>
     <tr>
       <th><center>Total Battles</center></th>
@@ -45,9 +117,9 @@
   </thead>
   <tbody>
     <tr>
-      <td><center id=b1></center></td>
-      <td><center id=w1></center></td>
-      <td><center id=l1></center></td>
+      <td id=b1></td>
+      <td id=w1></td>
+      <td id=l1></td>
     </tr>
     <tr>
       <td><center id=b2></center></td>
@@ -93,11 +165,16 @@
   
   <script>
     // calculate output when any input changes
-    w.oninput = l.oninput = function () {
+    w.oninput = l.oninput = target.oninput = function () {
       r.value = winrate(
         Number(w.value),
         Number(l.value)
       );
       updateTableEntry();
+
+      var battles = 0;
+      battles = targetWR(w.value, l.value, target.value);
+      req.textContext = battles.toString();
+      req.value = battles;
     };
   </script>
