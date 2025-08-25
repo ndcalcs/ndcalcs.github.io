@@ -68,7 +68,15 @@ const digimonDict = {
   "Etemon": {"Tama": "M", "HP": 2000, "ATK": 239, "SPD": 157, "DEF": 152},
   "Chackmon": {"Tama": "SP", "Type": "Free", "HP": 950, "ATK": 80, "SPD": 70, "DEF": 80},
   "Scumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0},
-  "KingScumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0}
+  "KingScumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0},
+  "Bakemon": {"Tama": "D", "HP": 600, "ATK": 40, "SPD": 60, "DEF": 40},
+  "Bakemon+": {"Tama": "D", "HP": 1000, "ATK": 80, "SPD": 90, "DEF": 50},
+  "Soulmon": {"Tama": "D", "HP": 600, "ATK": 50, "SPD": 70, "DEF": 40},
+  "Soulmon+":{"Tama": "D", "HP": 1000, "ATK": 90, "SPD": 100, "DEF": 50},
+  "SkullGreymon": {"Tama": "D", "HP": 1600, "ATK": 270, "SPD": 70, "DEF": 100},
+  "Fantomon": {"Tama": "D", "HP": 2200, "ATK": 250, "SPD": 180, "DEF": 100},
+  "Metal Fantomon": {"Tama": "D", "HP": 2200, "ATK": 240, "SPD": 150, "DEF": 140},
+  "Ghostmon": {"Tama": "D", "HP": 250, "ATK": 45, "SPD": 65, "DEF": 25}
 };
 
 // Lists of Digimon for each evolutionary stage.
@@ -84,6 +92,7 @@ const childList = [
   "Agumon",
   "Agumon 06",
   "Black Agumon",
+  "Ghostmon",
   "Gottsumon",
   "Kokuwamon",
   "Pillomon",
@@ -91,6 +100,8 @@ const childList = [
   "Yuki Agumon"
 ];
 const adultList = [
+  "Bakemon",
+  "Bakemon+",
   "Chackmon",
   "Clockmon",
   "DarkTyrannomon",
@@ -106,6 +117,8 @@ const adultList = [
   "Scumon",
   "ShellNumemon",
   "ShootingStarmon",
+  "Soulmon",
+  "Soulmon+",
   "Starmon",
   "Thunderballmon",
   "Tuskmon",
@@ -124,6 +137,7 @@ const perfList = [
   "Blizzardmon",
   "DarkSuperStarmon",
   "Etemon",
+  "Fantmon",
   "Gigadramon",
   "GigaWaruMonzaemon",
   "InsekimonDark",
@@ -135,6 +149,7 @@ const perfList = [
   "MameTyramon",
   "Master Tyranomon",
   "Megadramon",
+  "Metal Fantomon",
   "MetalGreymon",
   "MetalGreymon Alter",
   "MetalGreymon Virus",
@@ -143,9 +158,10 @@ const perfList = [
   "Monzaemon",
   "Polar Bearmon",
   "RizeGreymon",
+  "SkullGreymon",
   "SuperStarmon",
   "Triceramon",
-  "WaruMonzaemon"
+  "WaruMonzaemon",
 ];
 const ultList = [
   "Daipenmon",

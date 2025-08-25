@@ -2,7 +2,25 @@
 <meta charset=utf-8>
 <title>ND: Training Calculator</title>
 <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>  
-
+<style>
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  select {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .table-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+</style>
 <header>
     <h1>NetDriver Calculators and Data</h1>
     <p>Compiled and coded by Carrow8993</p>
@@ -22,9 +40,10 @@
 </header>
 
 <main>
-<h2><center>Training Calculator</center></h2>
+<h3><center>Training Calculator</center></h3>
 <section>
-<table style="margin-left:auto; margin-right:auto;">
+<div class="table-container">
+<table>
   <thead>
     <tr>
       <th>Inputs</th>
@@ -35,7 +54,7 @@
     <tr>
       <td>Stage</td>
       <td><center>
-        <select id=stage style="margin-top:auto; margin-bottom:auto;">
+        <select id=stage>
            <option value="Baby 1">Baby 1</option>
            <option value="Baby 2">Baby 2</option>
            <option value="Child">Child</option>
@@ -54,7 +73,7 @@
     <tr>
       <td>Arrow</td>
       <td><center>
-        <select id=arrow style="margin-top:auto; margin-bottom:auto;">
+        <select id=arrow>
            <option value="None">None</option>
            <option value="Single">Single</option>
            <option value="Double">Double</option>
@@ -63,7 +82,7 @@
     </tr>
     <tr>
       <td>Food</td>
-      <td><select id=food style="margin-top:auto; margin-bottom:auto;">
+      <td><select id=food>
         <option value="None">None</option>
         <option value="Anomaly Meat">Anomaly Meat</option>
         <option value="Carrot">Carrot</option>
@@ -78,7 +97,7 @@
     <tr>
       <td>Stat</td>
       <td><center>
-        <select id=stat style="margin-top:auto; margin-bottom:auto;">
+        <select id=stat>
            <option value="ATK">ATK</option>
            <option value="HP">HP</option>
            <option value="SPD">SPD</option>
@@ -87,8 +106,37 @@
     </tr>
   </tbody>
 </table>
+
+<table>
+  <caption style="caption-side: top; font-weight:normal;">
+    Calculate how many training sessions you need to hit your target training!
+  </caption>
+  <tbody>
+    <tr>
+      <td><center>Current</br>Training%</center></td>
+      <td><center>
+        <input type=number id=currentTraining value=0 max=100 min=0></input>
+      </center></td>
+    </tr>
+    <tr>
+      <td><center>Target</br>Training%</center></td>
+      <td><center>
+        <input type=number id=targetTraining value=0 max=100 min=0></input>
+      </center></td>
+    </tr>
+    <tr>
+      <td><center><b>Session Count</b>*</br>
+      *rounded up</br></center></td>
+      <td><center id=sessionCount></center></td>
+    </tr>
+  </tbody>
+  <caption>
+  </caption>
+</table>
+
+</div>
 <h5><center>Results</center></h5>
-<table style="margin-left:auto; margin-right:auto;">
+<table>
   <thead>
     <tr>
       <th>Session Value</th>
@@ -113,35 +161,8 @@
 </section>
 
 <section>
-<h5><center>Target Training Calculator</center></h5>
-<center>Calculate how many training sessions you need to hit your target training!</center>
-<center>Utilizes stage and session values from above calculator, use that one first.</center>
-<table style="margin-left:auto; margin-right:auto;">
-  <tbody>
-    <tr>
-      <td><center>Current Training %</center></td>
-      <td><center>
-        <input type=number id=currentTraining value=0 max=100 min=0></input>
-      </center></td>
-    </tr>
-    <tr>
-      <td><center>Target Training %</center></td>
-      <td><center>
-        <input type=number id=targetTraining value=0 max=100 min=0></input>
-      </center></td>
-    </tr>
-    <tr>
-      <td><center><b>Session Count</b>*</center></td>
-      <td><center id=sessionCount></center></td>
-    </tr>
-  </tbody>
-</table>
-<center>*rounded up</center>
-</section>
-
-<section>
   <h4><center>Training Caps by Stage</center></h4>
-  <table style="margin-left:auto; margin-right:auto;">
+  <table>
     <thead>
       <tr>
         <th>Stage</th>
@@ -186,7 +207,7 @@
 
 <section>
   <h4><center>Arrow Values</center></h4>
-  <table style="margin-left:auto; margin-right:auto;">
+  <table>
     <thead>
       <tr>
         <th><center>Bond Range</center></th>
@@ -232,7 +253,7 @@
 
 <section>
   <h4><center>Arrow Values</center></h4>
-  <table style="margin-left:auto; margin-right:auto;">
+  <table>
     <thead>
       <tr>
         <th>Arrow Type</th>
@@ -272,7 +293,7 @@
 
 <section>
   <h4><center>Food Values</center></h4>
-  <table style="margin-left:auto; margin-right:auto;">
+  <table>
     <thead>
       <tr>
         <th>Food</th>
