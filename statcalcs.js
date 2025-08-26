@@ -137,7 +137,7 @@ const perfList = [
   "Blizzardmon",
   "DarkSuperStarmon",
   "Etemon",
-  "Fantmon",
+  "Fantomon",
   "Gigadramon",
   "GigaWaruMonzaemon",
   "InsekimonDark",
