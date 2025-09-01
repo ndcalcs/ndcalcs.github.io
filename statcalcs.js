@@ -76,7 +76,8 @@ const digimonDict = {
   "SkullGreymon": {"Tama": "D", "HP": 1600, "ATK": 270, "SPD": 70, "DEF": 100},
   "Fantomon": {"Tama": "D", "HP": 2200, "ATK": 250, "SPD": 180, "DEF": 100},
   "Metal Fantomon": {"Tama": "D", "HP": 2200, "ATK": 240, "SPD": 150, "DEF": 140},
-  "Ghostmon": {"Tama": "D", "HP": 250, "ATK": 45, "SPD": 65, "DEF": 25}
+  "Ghostmon": {"Tama": "D", "HP": 250, "ATK": 45, "SPD": 65, "DEF": 25},
+  "Mushmon": {"Tama": "M", "HP": 550, "ATK": 30, "SPD": 40, "DEF": 25}
 };
 
 // Lists of Digimon for each evolutionary stage.
@@ -95,6 +96,7 @@ const childList = [
   "Ghostmon",
   "Gottsumon",
   "Kokuwamon",
+  "Mushmon",
   "Pillomon",
   "Starmons",
   "Yuki Agumon"
