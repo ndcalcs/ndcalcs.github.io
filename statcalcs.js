@@ -77,7 +77,13 @@ const digimonDict = {
   "Fantomon": {"Tama": "D", "HP": 2200, "ATK": 250, "SPD": 180, "DEF": 100},
   "Metal Fantomon": {"Tama": "D", "HP": 2200, "ATK": 240, "SPD": 150, "DEF": 140},
   "Ghostmon": {"Tama": "D", "HP": 250, "ATK": 45, "SPD": 65, "DEF": 25},
-  "Mushmon": {"Tama": "M", "HP": 550, "ATK": 30, "SPD": 40, "DEF": 25}
+  "Mushmon": {"Tama": "M", "HP": 550, "ATK": 30, "SPD": 40, "DEF": 25},
+  "PrinceMamemon": {"Tama": "V0", "HP": 750, "ATK": 150, "SPD": 120, "DEF": 205},
+  "Devitamamon": {"Tama": "M", "HP": 2200, "ATK": 150, "SPD": 60, "DEF": 120},
+  "Chamblemon": {"Tama": "P", "HP": 1300, "ATK": 50, "SPD": 70, "DEF": 50},
+  "Nanimon": {"Type": "Virus", "HP": 650, "ATK": 50, "SPD": 55, "DEF": 30},
+  "BomberNanimon": {"Type": "Virus", "HP": 700, "ATK": 45, "SPD": 45, "DEF": 40},
+  "Digitamamon": {"Type": "Data", "HP": 2700, "ATK": 210, "SPD": 100, "DEF": 170}
 };
 
 // Lists of Digimon for each evolutionary stage.
@@ -128,7 +134,10 @@ const adultList = [
   "Vdramon",
   "VDramon Black",
   "VDramon Red",
-  "YukiDarumon"
+  "YukiDarumon",
+  "Chamblemon",
+  "Nanimon",
+  "BomberNanimon"
 ];
 const perfList = [
   "AeroVdramon",
@@ -164,12 +173,15 @@ const perfList = [
   "SuperStarmon",
   "Triceramon",
   "WaruMonzaemon",
+  "Digitamamon"
 ];
 const ultList = [
   "Daipenmon",
   "Machinedramon",
   "MetalEtemon",
-  "PlatinumNumemon"
+  "PlatinumNumemon",
+  "Devitamamon",
+  "PrinceMamemon"
 ];
 
 // List of stat keys used for iteration.
@@ -308,12 +320,12 @@ function updateSums() {
  */
 function populateDropdowns() {
   const stages = [
-    { id: 'baby1', list: baby1List },
-    { id: 'baby2', list: baby2List },
-    { id: 'child', list: childList },
-    { id: 'adult', list: adultList },
-    { id: 'perf', list: perfList },
-    { id: 'ult', list: ultList }
+    { id: 'baby1', list: baby1List.sort() },
+    { id: 'baby2', list: baby2List.sort() },
+    { id: 'child', list: childList.sort() },
+    { id: 'adult', list: adultList.sort() },
+    { id: 'perf', list: perfList.sort() },
+    { id: 'ult', list: ultList.sort() }
   ];
 
   stages.forEach(stage => {
