@@ -81,9 +81,9 @@ const digimonDict = {
   "PrinceMamemon": {"Tama": "V0", "HP": 750, "ATK": 150, "SPD": 120, "DEF": 205},
   "Devitamamon": {"Tama": "M", "HP": 2200, "ATK": 150, "SPD": 60, "DEF": 120},
   "Chamblemon": {"Tama": "P", "HP": 1300, "ATK": 50, "SPD": 70, "DEF": 50},
-  "Nanimon": {"Type": "Virus", "HP": 650, "ATK": 50, "SPD": 55, "DEF": 30},
-  "BomberNanimon": {"Type": "Virus", "HP": 700, "ATK": 45, "SPD": 45, "DEF": 40},
-  "Digitamamon": {"Type": "Data", "HP": 2700, "ATK": 210, "SPD": 100, "DEF": 170}
+  "Nanimon": {"Tama": "M", "HP": 650, "ATK": 50, "SPD": 55, "DEF": 30},
+  "BomberNanimon": {"Tama": "M", "HP": 700, "ATK": 45, "SPD": 45, "DEF": 40},
+  "Digitamamon": {"Tama": "M", "HP": 2700, "ATK": 210, "SPD": 100, "DEF": 170}
 };
 
 // Lists of Digimon for each evolutionary stage.
