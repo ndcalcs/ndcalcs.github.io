@@ -82,7 +82,7 @@ const digimonDict = {
   "Devitamamon": {"Tama": "M", "HP": 2200, "ATK": 150, "SPD": 60, "DEF": 120},
   "Chamblemon": {"Tama": "P", "HP": 1300, "ATK": 50, "SPD": 70, "DEF": 50},
   "Nanimon": {"Tama": "M", "HP": 650, "ATK": 50, "SPD": 55, "DEF": 30},
-  "BomberNanimon": {"Tama": "M", "HP": 700, "ATK": 45, "SPD": 45, "DEF": 40},
+  "BomberNanimon": {"Tama": "M", "HP": 400, "ATK": 70, "SPD": 80, "DEF": 10},
   "Digitamamon": {"Tama": "M", "HP": 2700, "ATK": 210, "SPD": 100, "DEF": 170}
 };
 
