@@ -1,26 +1,14 @@
 <!doctype html>
 <meta charset=utf-8>
-<title>ND: Training Planner</title>
-<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>  
-<style>
-  table {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  th, td {
-    text-align: center;
-    vertical-align: middle;
-  }
-  select {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-</style>
+<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+<link rel=stylesheet href="./custom.css">
+
 <header>
     <h1>NetDriver Calculators and Data</h1>
     <p>Compiled and coded by Carrow8993</p>
     <nav>
-      <a href="./index.html">Care</a>
+      <a href="./index.html">Home & Links</a>
+      <a href="./care.html">Care</a>
       <a href="./wr.html">Win Rate</a>
       <a href="./shop.html">Shop Schedule</a>
       <a href="./statcalcs.html">Base Stats</a>
@@ -28,16 +16,13 @@
       <a href="./planner.html">Planner</a>
       <a href="./boxdrops.html">Box Drops</a>
       <a href="./tipmessages.html">Tip Messages</a>
-      <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
-      <a href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
-      <a href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
     </nav>
 </header>
-</head>
 <body>
-
-  <h1><center>Training Planner</center></h1>
-<section>
+  <section>
+    <h3><center>Training Planner</center></h3>
+  </section>
+  <div class="table-container">
   <table>
     <tbody>
       <tr>
@@ -72,7 +57,39 @@
       </tr>
     </tbody>
   </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Full%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Baby 1</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Baby 2</td>
+        <td>40.3</td>
+      </tr>
+      <tr>
+        <td>Child</td>
+        <td>35.4</td>
+      </tr>
+      <tr>
+        <td>Adult</td>
+        <td>53.8</td>
+      </tr>
+      <tr>
+        <td>Perfect</td>
+        <td>46.4</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 <center>The planner assumes you hit the best arrow possible.</center>
+<center>"Full%" indicates training % stage will be at if previous stage was capped.</center>
 </section>
 <section>
   <table id="trainingTable">
@@ -93,6 +110,8 @@
   *Bond values under 0 still unimplemented haha<br>
   *Planner does not increase bond from food or training, value above is the same value used in all 10 sessions.<br>
 </section>
+
+
 <script src=planner.js></script>
 <script>
     initTable();

@@ -184,165 +184,171 @@ const ultList = [
   "PrinceMamemon"
 ];
 
-// List of stat keys used for iteration.
-const stats = [
-    "HP",
-    "ATK",
-    "SPD",
-    "DEF"
-];
+const stats = ["HP", "ATK", "SPD", "DEF"];
 
-// Get references to the HTML select elements.
-const baby1 = document.getElementById('baby1');
-const baby2 = document.getElementById('baby2');
-const child = document.getElementById('child');
-const adult = document.getElementById('adult');
-const perf = document.getElementById('perf');
-const ult = document.getElementById('ult');
+// Define the structure for each stage's element IDs and data list
+const stageInfo = {
+    'Baby1':   { statList: ['hp1', 'atk1', 'spd1', 'def1'] },
+    'Baby2':   { statList: ['hp2', 'atk2', 'spd2', 'def2'] },
+    'Child':   { statList: ['hp3', 'atk3', 'spd3', 'def3'] },
+    'Adult':   { statList: ['hp4', 'atk4', 'spd4', 'def4'] },
+    'Perfect': { statList: ['hp5', 'atk5', 'spd5', 'def5'] },
+    'Ultimate':{ statList: ['hp6', 'atk6', 'spd6', 'def6'] }
+};
+const sumList = ['sum1','sum2','sum3','sum4','sum5','sum6'];
 
-// Arrays of element IDs for each stage's stat labels.
-const baby1StatList = ['hp1','atk1','spd1','def1'];
-const baby2StatList = ['hp2','atk2','spd2','def2'];
-const childStatList = ['hp3','atk3','spd3','def3'];
-const adultStatList = ['hp4','atk4','spd4','def4'];
-const perfStatList = ['hp5','atk5','spd5','def5'];
-const ultStatList = ['hp6','atk6','spd6','def6'];
 
 /**
- * Calculates the base stats of a Digimon after evolution.
+ * Calculates the base stats of a Digimon after evolution for a specific calculator instance.
  * @param {string} currentDigi - The name of the current Digimon.
  * @param {string} lastDigi - The name of the previous Digimon.
  * @param {string} stage - The current evolutionary stage (e.g., "Baby1", "Child").
+ * @param {string} suffix - The suffix for the element IDs (e.g., '-1', '-2').
  */
-function calcBaseStat(currentDigi, lastDigi, stage) {
+function calcBaseStat(currentDigi, lastDigi, stage, suffix) {
     let newStats = [];
     const currentInnate = digimonDict[currentDigi];
     const lastInnate = digimonDict[lastDigi];
+    const targetStatIds = stageInfo[stage].statList;
 
-    // If data for the digimon doesn't exist, exit to prevent errors.
     if (!currentInnate || !lastInnate) {
         console.error("Digimon data not found for:", currentDigi, "or", lastDigi);
         return;
     }
 
     for (let i = 0; i < stats.length; i++) {
+        let prevStageStat = 0;
         switch(stage) {
-          case "Baby1":
-            document.getElementById(baby1StatList[i]).textContent = currentInnate[stats[i]];
-            break;
-          case "Baby2":
-            const baby1Stat = Number(document.getElementById(baby1StatList[i]).innerText);
-            newStats.push(currentInnate[stats[i]] + baby1Stat - Math.round(0.6 * (lastInnate[stats[i]])));
-            document.getElementById(baby2StatList[i]).textContent = newStats[i];
-            break;
-          case "Child":
-            const baby2Stat = Number(document.getElementById(baby2StatList[i]).innerText);
-            newStats.push(currentInnate[stats[i]] + baby2Stat - Math.round(0.6 * (lastInnate[stats[i]])));
-            document.getElementById(childStatList[i]).textContent = newStats[i];
-            break;
-          case "Adult":
-            const childStat = Number(document.getElementById(childStatList[i]).innerText);
-            // Special case for Scumon evolution
-            if (currentDigi === "Scumon") {
-              newStats.push(childStat + Math.round(lastInnate[stats[i]] * 0.74));
-            } else {
-              newStats.push(currentInnate[stats[i]] + childStat - Math.round(0.6 * (lastInnate[stats[i]])));
-            }
-            document.getElementById(adultStatList[i]).textContent = newStats[i];
-            break;
-          case "Perfect":
-            const adultStat = Number(document.getElementById(adultStatList[i]).innerText);
-            // Special cases for Scumon evolutions
-            if (lastDigi === "Scumon" || currentDigi === "KingScumon") {
-              newStats.push(Math.round(adultStat * 1.4));
-            } else {
-              newStats.push(currentInnate[stats[i]] + adultStat - Math.round(0.6 * (lastInnate[stats[i]])));
-            }
-            document.getElementById(perfStatList[i]).textContent = newStats[i];
-            break;
-          case "Ultimate":
-            const perfStat = Number(document.getElementById(perfStatList[i]).innerText);
-            // Special case for KingScumon evolution
-            if (lastDigi === "KingScumon") {
-              newStats.push(Math.round(1.4 * perfStat));
-            } else {
-              newStats.push(currentInnate[stats[i]] + perfStat - Math.round(0.6 * (lastInnate[stats[i]])));
-            }
-            document.getElementById(ultStatList[i]).textContent = newStats[i];
+            case "Baby1":
+                // Baby1's base stats are its innate stats
+                newStats.push(currentInnate[stats[i]]);
+                break;
+            case "Baby2":
+                prevStageStat = Number(document.getElementById(stageInfo['Baby1'].statList[i] + suffix).innerText);
+                newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
+                break;
+            case "Child":
+                prevStageStat = Number(document.getElementById(stageInfo['Baby2'].statList[i] + suffix).innerText);
+                newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
+                break;
+            case "Adult":
+                prevStageStat = Number(document.getElementById(stageInfo['Child'].statList[i] + suffix).innerText);
+                if (currentDigi === "Scumon") {
+                    newStats.push(prevStageStat + Math.round(lastInnate[stats[i]] * 0.74));
+                } else {
+                    newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
+                }
+                break;
+            case "Perfect":
+                prevStageStat = Number(document.getElementById(stageInfo['Adult'].statList[i] + suffix).innerText);
+                if (lastDigi === "Scumon" || currentDigi === "KingScumon") {
+                    let currentInnateStat = Math.round(digimonDict[document.getElementById("Child"+suffix).value][stats[i]]*1.34*2.25);
+                    let lastInnateStat = Math.round(digimonDict[document.getElementById("Child"+suffix).value][stats[i]]*1.34);
+                    newStats.push(currentInnateStat + prevStageStat - Math.round(0.6 * lastInnateStat));
+                    let stageDropdown = document.getElementById("Perfect"+suffix).children[0];
+                    stageDropdown.value = "KingScumon";
+                    stageDropdown.textContent = "KingScumon";
+                } else {
+                    newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
+                }
+                break;
+            case "Ultimate":
+                prevStageStat = Number(document.getElementById(stageInfo['Perfect'].statList[i] + suffix).innerText);
+                if (lastDigi === "KingScumon") {
+                    newStats.push(0);
+                } else {
+                    newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
+                }
+                break;
+        }
+        if (newStats[i] !== undefined) {
+            document.getElementById(targetStatIds[i] + suffix).textContent = newStats[i];
         }
     }
     updateSums();
 }
 
-const sumList = ['sum1','sum2','sum3','sum4','sum5','sum6'];
-
 /**
- * Updates the SUM column for all stages based on current stats.
+ * Updates the SUM column for a specific calculator instance.
+ * @param {string} suffix - The suffix for the element IDs.
  */
-function updateSums() {
-  for (let j = 0; j < sumList.length; j++) {
-    let currentSum = 0;
-    for (let i = 0; i < stats.length; i++) {
-      let currentStat = 0;
-      switch (j) {
-        case 0:
-          currentStat = Number(document.getElementById(baby1StatList[i]).textContent);
-          break;
-        case 1:
-          currentStat = Number(document.getElementById(baby2StatList[i]).textContent);
-          break;
-        case 2:
-          currentStat = Number(document.getElementById(childStatList[i]).textContent);
-          break;
-        case 3:
-          currentStat = Number(document.getElementById(adultStatList[i]).textContent);
-          break;
-        case 4:
-          currentStat = Number(document.getElementById(perfStatList[i]).textContent);
-          break;
-        case 5:
-          currentStat = Number(document.getElementById(ultStatList[i]).textContent);
-          break;
-      }
-      // HP is weighted differently in the sum calculation.
-      if (stats[i] === "HP") {
-        currentSum += Math.round(currentStat / 10);
-      } else {
-        currentSum += currentStat;
-      }
+function updateSums(suffix) {
+    const allStatLists = Object.values(stageInfo).map(s => s.statList);
+    for (let j = 0; j < sumList.length; j++) {
+        let currentSum = 0;
+        for (let i = 0; i < stats.length; i++) {
+            const statElement = document.getElementById(allStatLists[j][i] + suffix);
+            if (statElement) {
+                let currentStat = Number(statElement.textContent);
+                currentSum += (stats[i] === "HP") ? (currentStat / 10) : currentStat;
+            }
+        }
+        const sumElement = document.getElementById(sumList[j] + suffix);
+        if (sumElement) {
+            sumElement.textContent = currentSum;
+        }
     }
-    document.getElementById(sumList[j]).textContent = currentSum;
-  }
 }
 
 /**
- * Populates all the dropdown select elements from their corresponding lists.
+ * Populates dropdowns for a specific calculator instance.
+ * @param {string} suffix - The suffix for the element IDs.
  */
-function populateDropdowns() {
+function populateDropdowns(suffix) {
   const stages = [
-    { id: 'baby1', list: baby1List.sort() },
-    { id: 'baby2', list: baby2List.sort() },
-    { id: 'child', list: childList.sort() },
-    { id: 'adult', list: adultList.sort() },
-    { id: 'perf', list: perfList.sort() },
-    { id: 'ult', list: ultList.sort() }
+    { id: 'Baby1', list: baby1List }, { id: 'Baby2', list: baby2List },
+    { id: 'Child', list: childList }, { id: 'Adult', list: adultList },
+    { id: 'Perfect', list: perfList }, { id: 'Ultimate', list: ultList }
   ];
 
   stages.forEach(stage => {
-    const selectElement = document.getElementById(stage.id);
-    // Clear any existing options before populating
-    selectElement.innerHTML = '';
-    stage.list.forEach(digimonName => {
-      const option = document.createElement('option');
-      option.value = digimonName;
-      option.textContent = digimonName;
-      selectElement.appendChild(option);
-    });
+    const selectElement = document.getElementById(stage.id + suffix);
+    if (selectElement) {
+        selectElement.innerHTML = '';
+        stage.list.forEach(digimonName => {
+            const option = document.createElement('option');
+            option.value = digimonName;
+            option.textContent = digimonName;
+            selectElement.appendChild(option);
+        });
+    }
   });
 }
 
 /**
- * Creates and populates the innate stat tables for each evolutionary stage with a sorting dropdown.
+ * Recalculates all stats for a specific calculator instance.
+ * @param {string} suffix - The suffix for the element IDs.
+ */
+function recalculateAll(suffix) {
+    var baby1 = document.getElementById('Baby1' + suffix).value;
+    var baby2 = document.getElementById('Baby2' + suffix).value;
+    var child = document.getElementById('Child' + suffix).value;
+    var adult = document.getElementById('Adult' + suffix).value;
+    var perf = document.getElementById('Perfect' + suffix).value;
+    var ult = document.getElementById('Ultimate' + suffix).value;
+
+    calcBaseStat(baby1, baby1, "Baby1", suffix);
+    calcBaseStat(baby2, baby1, "Baby2", suffix);
+    calcBaseStat(child, baby2, "Child", suffix);
+    calcBaseStat(adult, child, "Adult", suffix);
+    calcBaseStat(perf, adult, "Perfect", suffix);
+    calcBaseStat(ult, perf, "Ultimate", suffix);
+    updateSums(suffix);
+}
+
+function setAll(suffix) {
+    calcBaseStat("Botamon", "Botamon", "Baby1", suffix);
+    calcBaseStat("Koromon", "Botamon", "Baby2", suffix);
+    calcBaseStat("Agumon", "Koromon", "Child", suffix);
+    calcBaseStat("Greymon", "Agumon", "Adult", suffix);
+    calcBaseStat("MetalGreymon Virus", "Greymon", "Perfect", suffix);
+    calcBaseStat("Machinedramon", "MetalGreymon Virus", "Ultimate", suffix);
+    updateSums(suffix);
+}
+
+/**
+ * Creates and populates the innate stat tables for each evolutionary stage.
+ * This function is independent of the main calculators and only needs to run once.
  */
 function populateInnateStatTables() {
     const stages = [
@@ -356,10 +362,9 @@ function populateInnateStatTables() {
 
     stages.forEach(stage => {
         const targetElement = document.getElementById(stage.targetId);
-        if (!targetElement) return;
-
-        // Call the initial table render function. It will handle creating the full section.
-        sortInnateTable(stage.list, 'name', stage.targetId);
+        if (targetElement) {
+            sortInnateTable(stage.list, 'name', stage.targetId);
+        }
     });
 }
 
@@ -371,18 +376,14 @@ function populateInnateStatTables() {
  */
 function sortInnateTable(digimonList, sortKey, targetElementId) {
     const targetElement = document.getElementById(targetElementId);
+    if (!targetElement) return;
 
     const sortedList = [...digimonList].sort((a, b) => {
         const statsA = digimonDict[a];
         const statsB = digimonDict[b];
-
-        if (sortKey === 'name') {
-            return a.localeCompare(b);
-        }
-
+        if (sortKey === 'name') return a.localeCompare(b);
         const valueA = (sortKey === 'SUM') ? Math.round(statsA.HP / 10) + statsA.ATK + statsA.SPD + statsA.DEF : statsA[sortKey];
         const valueB = (sortKey === 'SUM') ? Math.round(statsB.HP / 10) + statsB.ATK + statsB.SPD + statsB.DEF : statsB[sortKey];
-
         return valueB - valueA;
     });
 
@@ -397,78 +398,107 @@ function sortInnateTable(digimonList, sortKey, targetElementId) {
                 <option value="DEF" ${sortKey === 'DEF' ? 'selected' : ''}>DEF</option>
                 <option value="SUM" ${sortKey === 'SUM' ? 'selected' : ''}>SUM</option>
             </select></label></center>
-        <table style="margin-left:auto; margin-right:auto;">
-            <thead>
-                <tr>
-                    <th>Digimon</th>
-                    <th><center>HP</center></th>
-                    <th><center>ATK</center></th>
-                    <th><center>SPD</center></th>
-                    <th><center>DEF</center></th>
-                    <th><center>SUM</center></th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
+        <table>
+            <thead><tr><th>Digimon</th><th>HP</th><th>ATK</th><th>SPD</th><th>DEF</th><th>SUM</th></tr></thead>
+            <tbody>`;
 
     sortedList.forEach(digimonName => {
         const digiStats = digimonDict[digimonName];
         if (digiStats) {
             const sum = Math.round(digiStats.HP / 10) + digiStats.ATK + digiStats.SPD + digiStats.DEF;
-            tableHTML += `
-                <tr>
-                    <td>${digimonName}</td>
-                    <td><center>${digiStats.HP}</center></td>
-                    <td><center>${digiStats.ATK}</center></td>
-                    <td><center>${digiStats.SPD}</center></td>
-                    <td><center>${digiStats.DEF}</center></td>
-                    <td><center>${sum}</center></td>
-                </tr>
-            `;
+            tableHTML += `<tr><td>${digimonName}</td><td><center>${digiStats.HP}</center></td><td><center>${digiStats.ATK}</center></td><td><center>${digiStats.SPD}</center></td><td><center>${digiStats.DEF}</center></td><td><center>${sum}</center></td></tr>`;
         }
     });
 
-    tableHTML += `
-            </tbody>
-    </table>
-    `;
-
+    tableHTML += `</tbody></table>`;
     targetElement.innerHTML = tableHTML;
 
-    // Re-attach the event listener to the newly created dropdown.
     document.getElementById(`sort-${targetElementId}`).addEventListener('change', (event) => {
-        const newSortKey = event.target.value;
-        sortInnateTable(digimonList, newSortKey, targetElementId);
+        sortInnateTable(digimonList, event.target.value, targetElementId);
     });
 }
 
 /**
- * Recalculates all stats from top to bottom.
+ * Sets up the calculators, creating the second one by cloning the first.
  */
-function recalculateAll() {
-    calcBaseStat(baby1.value, baby1.value, "Baby1");
-    calcBaseStat(baby2.value, baby1.value, "Baby2");
-    calcBaseStat(child.value, baby2.value, "Child");
-    calcBaseStat(adult.value, child.value, "Adult");
-    calcBaseStat(perf.value, adult.value, "Perfect");
-    calcBaseStat(ult.value, perf.value, "Ultimate");
+function setupCalculators() {
+
+    // Initialize both calculators
+    ['-1', '-2'].forEach(suffix => {
+        populateDropdowns(suffix);
+        //setAll(suffix);
+    });
+
 }
 
+function createTableRowsWithTemplate(suffix) {
+  const tableBody = document.getElementById('table' + suffix); // Select the table body
+  let rowsHTML = '';
+  i = 1;
+
+  Object.keys(stageInfo).forEach(stage => {
+    rowsHTML += `
+      <tr>
+        <td>
+          <select id="${stage}${suffix}"></select>
+        </td>
+        <td><label id="hp${i}${suffix}"></label></td>
+        <td><label id="atk${i}${suffix}"></label></td>
+        <td><label id="spd${i}${suffix}"></label></td>
+        <td><label id="def${i}${suffix}"></label></td>
+        <td><label id="sum${i}${suffix}"></label></td>
+      </tr>
+    `;
+    i = i + 1;
+    
+  });
+  // Insert the generated HTML string into the table body
+  tableBody.innerHTML += rowsHTML; 
+
+    const stages = [
+    { id: 'Baby1' + suffix, list: baby1List },
+    { id: 'Baby2' + suffix, list: baby2List },
+    { id: 'Child' + suffix, list: childList },
+    { id: 'Adult' + suffix, list: adultList },
+    { id: 'Perfect' + suffix, list: perfList },
+    { id: 'Ultimate' + suffix, list: ultList }
+  ];
+
+  stages.forEach(stage => {
+    const selectElement = document.getElementById(stage.id + suffix);
+    if (selectElement) {
+        selectElement.innerHTML = '';
+        stage.list.forEach(digimonName => {
+            const option = document.createElement('option');
+            option.value = digimonName;
+            option.textContent = digimonName;
+            selectElement.appendChild(option);
+        });
+    }
+  });
+}
 
 // --- INITIALIZATION ---
-
-// Populate the dropdowns with Digimon names when the script loads.
-populateDropdowns();
-
-// Populate the innate stat tables
+// This runs when the script is loaded.
+createTableRowsWithTemplate('-1');
+createTableRowsWithTemplate('-2');
+// Populate the separate innate stat tables.
 populateInnateStatTables();
 
-// Set the initial stats on page load.
-recalculateAll();
+// Set up the main, cloneable calculators.
+setupCalculators();
 
-// Add a single event listener to the table body to handle changes for any dropdown.
-document.querySelector('tbody').addEventListener('change', (event) => {
+document.getElementById('table-1').addEventListener('change', (event) => {
     if (event.target.tagName === 'SELECT') {
-        recalculateAll();
+        recalculateAll('-1');
     }
 });
+
+document.getElementById('table-2').addEventListener('change', (event) => {
+    if (event.target.tagName === 'SELECT') {
+        recalculateAll('-2');
+    }
+});
+
+recalculateAll('-1');
+recalculateAll('-2');

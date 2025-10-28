@@ -1,13 +1,14 @@
 <!doctype html>
-<meta charset="utf-8">
-<html lang="en">
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+<meta charset=utf-8>
+<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+<link rel=stylesheet href="./custom.css">
 
 <header>
     <h1>NetDriver Calculators and Data</h1>
     <p>Compiled and coded by Carrow8993</p>
     <nav>
-      <a href="./index.html">Care</a>
+      <a href="./index.html">Home & Links</a>
+      <a href="./care.html">Care</a>
       <a href="./wr.html">Win Rate</a>
       <a href="./shop.html">Shop Schedule</a>
       <a href="./statcalcs.html">Base Stats</a>
@@ -15,103 +16,48 @@
       <a href="./planner.html">Planner</a>
       <a href="./boxdrops.html">Box Drops</a>
       <a href="./tipmessages.html">Tip Messages</a>
-      <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
-      <a href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
-      <a href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
     </nav>
 </header>
 
-<head>
-  <title>ND: Base Stat Calculator</title>
-</head>
 <body>
   <main>
     <h3><center>Base Stat Calculator</center></h3>
-      <!-- The main table for calculating Digimon stats -->
-      <table style="margin-left:auto; margin-right:auto;">
-        <thead>
-          <tr>
-            <th>Digimon</th>
-            <th><center>HP</center></th>
-            <th><center>ATK</center></th>
-            <th><center>SPD</center></th>
-            <th><center>DEF</center></th>
-            <th><center>SUM</center></th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Row for Baby I Stage -->
-          <tr>
-            <td>
-              <select id="baby1" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp1"></label></center></td>
-            <td><center><label id="atk1"></label></center></td>
-            <td><center><label id="spd1"></label></center></td>
-            <td><center><label id="def1"></label></center></td>
-            <td><center><label id="sum1"></label></center></td>
-          </tr>
-          <!-- Row for Baby II Stage -->
-          <tr>
-            <td>
-              <select id="baby2" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp2"></label></center></td>
-            <td><center><label id="atk2"></label></center></td>
-            <td><center><label id="spd2"></label></center></td>
-            <td><center><label id="def2"></label></center></td>
-            <td><center><label id="sum2"></label></center></td>
-          </tr>
-          <!-- Row for Child Stage -->
-          <tr>
-            <td>
-              <select id="child" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp3"></label></center></td>
-            <td><center><label id="atk3"></label></center></td>
-            <td><center><label id="spd3"></label></center></td>
-            <td><center><label id="def3"></label></center></td>
-            <td><center><label id="sum3"></label></center></td>
-          </tr>
-          <!-- Row for Adult Stage -->
-          <tr>
-            <td>
-              <select id="adult" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp4"></label></center></td>
-            <td><center><label id="atk4"></label></center></td>
-            <td><center><label id="spd4"></label></center></td>
-            <td><center><label id="def4"></label></center></td>
-            <td><center><label id="sum4"></label></center></td>
-          </tr>
-          <!-- Row for Perfect Stage -->
-          <tr>
-            <td>
-              <select id="perf" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp5"></label></center></td>
-            <td><center><label id="atk5"></label></center></td>
-            <td><center><label id="spd5"></label></center></td>
-            <td><center><label id="def5"></label></center></td>
-            <td><center><label id="sum5"></label></center></td>
-          </tr>
-          <!-- Row for Ultimate Stage -->
-          <tr>
-            <td>
-              <select id="ult" style="margin-top:auto; margin-bottom:auto;"></select>
-            </td>
-            <td><center><label id="hp6"></label></center></td>
-            <td><center><label id="atk6"></label></center></td>
-            <td><center><label id="spd6"></label></center></td>
-            <td><center><label id="def6"></label></center></td>
-            <td><center><label id="sum6"></label></center></td>
-          </tr>
-        </tbody>
-      </table>
+    <section>
+      <!-- This container will hold both calculator tables -->
+      <div class="table-container">
+          <!-- The main table for calculating Digimon stats. IDs now have a '-1' suffix. -->
+          <table>
+            <thead>
+              <tr>
+                <th>Digimon</th>
+                <th>HP</th>
+                <th>ATK</th>
+                <th>SPD</th>
+                <th>DEF</th>
+                <th>SUM</th>
+              </tr>
+            </thead>
+            <tbody id="table-1">
+            </tbody>
+          </table>
+        <table>
+            <thead>
+              <tr>
+                <th>Digimon</th>
+                <th>HP</th>
+                <th>ATK</th>
+                <th>SPD</th>
+                <th>DEF</th>
+                <th>SUM</th>
+              </tr>
+            </thead>
+            <tbody id="table-2">
+            </tbody>
+        </table>
+      </div>
       <!-- Notes about special cases -->
-      -Burpmon has the same base stats as its predecessor, but less than half stats in battle<br>
-      -Scumon stats are accurate, but evolution values are inaccurate and mostly just placeholder values<br>
-    </section>
+        -Burpmon has the same base stats as its predecessor, but less than half stats in battle<br>
+      </section>
 
     <!-- Sections for dynamically generated innate stat tables in reverse order -->
     <section id="Ultimate-Innate-Stats"></section>

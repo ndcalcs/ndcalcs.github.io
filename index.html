@@ -1,13 +1,14 @@
-  <!doctype html>
-  <meta charset=utf-8>
-  <title>ND: Care Calculator</title>
-  <link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+<!doctype html>
+<meta charset=utf-8>
+<link rel=stylesheet href=https://cdn.simplecss.org/simple.css>
+<link rel=stylesheet href="./custom.css">
 
 <header>
     <h1>NetDriver Calculators and Data</h1>
     <p>Compiled and coded by Carrow8993</p>
     <nav>
-      <a href="./index.html">Care</a>
+      <a href="./index.html">Home & Links</a>
+      <a href="./care.html">Care</a>
       <a href="./wr.html">Win Rate</a>
       <a href="./shop.html">Shop Schedule</a>
       <a href="./statcalcs.html">Base Stats</a>
@@ -15,65 +16,33 @@
       <a href="./planner.html">Planner</a>
       <a href="./boxdrops.html">Box Drops</a>
       <a href="./tipmessages.html">Tip Messages</a>
-      <a href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
-      <a href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Rodrigo's Evolution Hub</a>
-      <a href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
     </nav>
 </header>
 
-  <main>
-    <h2><center>Care Calculator</center></h2>
-    <p>Note that these are upper estimates, actual times will be shorter depending on how recently the value ticked to the input value. Hunger has a lower bound listed of (current hunger-10)+1min to account for this, its upper bound is based solely on the input hunger. Hunger only decrements by 10 in-game.</p>
-  
+<title>ND Calcs Home</title>
+
+<main>
+  <h2>Welcome!</h2>
+
     <section>
-    <label for=f>Fatigue%</label>
-    <input type=number id=f min=0 max=100>
-    
-    <label for=pd>(Pillomon Only) Pillo Drivers</label>
-    <input type=number id=pd min=0 max=5 value=0>
-    
-    <label for=f0>Offline time until 0 fatigue:</label>
-    <output id=f0></output>
+      <h5>Google Spreadsheets</h5>
+      <a class="button" href="https://docs.google.com/spreadsheets/d/1ThnaUiEyEKUMuOngD66bdVjaMFd28-Zr_7hb3TStUxc">Items & Other Info</a>
+      <a class="button" href="https://docs.google.com/spreadsheets/d/1SOkuRXLsNf7QrWB6H_jsH0sY2BLypRE-QbHK3eCMLoE">Driver List (EN)</a>
+      <a class="button" href="https://docs.google.com/spreadsheets/d/10Jhp8hlHUM8EcY0zyMpAZMQxU90zslAeRWkLzHioz4c/">Driver List (ES, more info)</a>
+      <a class="button" href="https://docs.google.com/spreadsheets/d/1WzSCjaje4apqByKV9HyXsLXEao92MoT07VQsNRqeAvI/">Driver Install Guide (ES)</a>
     </section>
-    
+
     <section>
-    <label for=h>Hunger%</label>
-    <input type=number id=h step=10 min=0 max=100>
-  
-    <label for=h0>Offline time until 0 hunger:</label>
-    <output id=h0></output>
+      <h5>Rodrigo's Evolution Hub</h5>
+      <a class="button" href="https://rodrigoalag.github.io/EvolutionCalculator/index.html">Basics</a>
+      <a class="button" href="https://rodrigoalag.github.io/EvolutionCalculator/calculadora.html">Evolution Calculator</a>
+      <a class="button" href="https://rodrigoalag.github.io/EvolutionCalculator/digimonreqs.html">Digimon Requirements</a>
     </section>
-  
+
     <section>
-    <label for=p>Poop%</label>
-    <input type=number id=p min=0 max=100>
-  
-    <label for=p0>Offline time until poop:</label>
-    <output id=p0></output>
+      <h5>WhiteRickle's Road To Perfect</h5>
+      <a class="button" href="https://whiterickle.neocities.org/">WhiteRickle's Guides</a>
+      <a class="button" href="https://whiterickle.neocities.org/Tamer_Assist_V0,7">WhiteRickle's Tamer Assist</a>
     </section>
-  </main>
-  
-  <script src=foo.js></script>
-  
-  <script>
-    // calculate output when any input changes
-    f.oninput = pd.oninput = function () {
-      f0.value = fatiguecalc(
-        Number(f.value),
-        Number(pd.value)
-      ); 
-    };
-    
-    h.oninput = function () {
-      h0.value = hungercalc(
-        Number(h.value)
-      ); 
-    };
-    
-    p.oninput = function () {
-      p0.value = poopcalc(
-        Number(p.value)
-      ); 
-    };
-  </script>
+</main>
 
