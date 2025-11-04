@@ -61,11 +61,11 @@ const digimonDict = {
   "InsekimonSuper": {"Tama": "VS", "HP": 1900, "ATK": 160, "SPD": 160, "DEF": 140},
   "InsekimonDark": {"Tama": "VS", "HP": 2000, "ATK": 150, "SPD": 90, "DEF": 210},
   "Daipenmon": {"Tama": "SP", "HP": 1200, "ATK": 160, "SPD": 110, "DEF": 160},
-  "MetalEtemon": {"Tama": "M", "HP": 1300, "ATK": 179, "SPD": 76, "DEF": 163},
+  "MetalEtemon": {"Tama": "M", "HP": 1300, "ATK": 180, "SPD": 90, "DEF": 150},
   "PlatinumNumemon": {"Tama": "M", "HP": 2000, "ATK": 100, "SPD": 60, "DEF": 190},
   "Machinedramon": {"Tama": "V0", "HP": 1700, "ATK": 170, "SPD": 70, "DEF": 140},
   "Blizzardmon": {"Tama": "SP", "HP": 2100, "ATK": 160, "SPD": 120, "DEF": 160},
-  "Etemon": {"Tama": "M", "HP": 2000, "ATK": 239, "SPD": 157, "DEF": 152},
+  "Etemon": {"Tama": "M", "HP": 2000, "ATK": 240, "SPD": 125, "DEF": 185},
   "Chackmon": {"Tama": "SP", "Type": "Free", "HP": 950, "ATK": 80, "SPD": 70, "DEF": 80},
   "Scumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0},
   "KingScumon": {"Tama": "M", "Type": "Virus", "HP": 0, "ATK": 0, "SPD": 0, "DEF": 0},
@@ -241,13 +241,13 @@ function calcBaseStat(currentDigi, lastDigi, stage, suffix) {
                 break;
             case "Perfect":
                 prevStageStat = Number(document.getElementById(stageInfo['Adult'].statList[i] + suffix).innerText);
-                if (lastDigi === "Scumon" || currentDigi === "KingScumon") {
+                if (lastDigi === "Scumon" && currentDigi === "KingScumon") {
                     let currentInnateStat = Math.round(digimonDict[document.getElementById("Child"+suffix).value][stats[i]]*1.34*2.25);
                     let lastInnateStat = Math.round(digimonDict[document.getElementById("Child"+suffix).value][stats[i]]*1.34);
                     newStats.push(currentInnateStat + prevStageStat - Math.round(0.6 * lastInnateStat));
-                    let stageDropdown = document.getElementById("Perfect"+suffix).children[0];
-                    stageDropdown.value = "KingScumon";
-                    stageDropdown.textContent = "KingScumon";
+                } else if (lastDigi === "Scumon" && currentDigi === "Etemon") {
+                    let lastInnateStat = Math.round(digimonDict[document.getElementById("Child"+suffix).value][stats[i]]*1.34);
+                    newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * lastInnateStat));
                 } else {
                     newStats.push(currentInnate[stats[i]] + prevStageStat - Math.round(0.6 * (lastInnate[stats[i]])));
                 }
