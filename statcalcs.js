@@ -1,4 +1,3 @@
-// This dictionary stores the innate stats for each Digimon.
 const digimonDict = {
   "Botamon": { "Tama": "V0", "HP": 50, "ATK": 6, "SPD": 4, "DEF": 6 },
   "Chibickmon": { "Tama": "V0", "HP": 40, "ATK": 7, "SPD": 6, "DEF": 4 },
@@ -86,7 +85,6 @@ const digimonDict = {
   "Digitamamon": {"Tama": "M", "HP": 2700, "ATK": 210, "SPD": 100, "DEF": 170}
 };
 
-// Lists of Digimon for each evolutionary stage.
 const baby1List = [
   "Botamon",
   "Chibickmon"
@@ -296,9 +294,9 @@ function updateSums(suffix) {
  */
 function populateDropdowns(suffix) {
   const stages = [
-    { id: 'Baby1', list: baby1List }, { id: 'Baby2', list: baby2List },
-    { id: 'Child', list: childList }, { id: 'Adult', list: adultList },
-    { id: 'Perfect', list: perfList }, { id: 'Ultimate', list: ultList }
+    { id: 'Baby1', list: baby1List.sort() }, { id: 'Baby2', list: baby2List.sort() },
+    { id: 'Child', list: childList.sort() }, { id: 'Adult', list: adultList.sort() },
+    { id: 'Perfect', list: perfList.sort() }, { id: 'Ultimate', list: ultList.sort() }
   ];
 
   stages.forEach(stage => {
