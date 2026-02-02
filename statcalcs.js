@@ -97,7 +97,13 @@ const digimonDict = {
   "Wargreymon-Black":   {"Digitama": "DT", "HP": 1900, "ATK": 175, "SPD": 85, "DEF": 100},
   "Death-X-DORUgamon": {"DigiDigitama": "DT", "HP": 900, "ATK": 100, "SPD": 60, "DEF": 500},
   "Death-X-DORUguremon": {"DigiDigitama": "DT", "HP": 1500, "ATK": 250, "SPD": 100, "DEF": 100},
-  "Wargreymon": {"Digitama": "V0", "HP": 1800, "ATK": 160, "SPD": 110, "DEF": 100}
+  "Wargreymon": {"Digitama": "V0", "HP": 1800, "ATK": 160, "SPD": 110, "DEF": 100},
+  "KingShoutmon": {"Digitama": "ST", "HP": 900, "ATK": 95, "SPD": 80, "DEF": 60},
+  "OmegaShoutmon": {"Digitama": "ST", "HP": 1800, "ATK": 220, "SPD": 160, "DEF": 140},
+  "Shoutmon": {"Digitama": "ST", "HP": 300, "ATK": 45, "SPD": 40, "DEF": 25},
+  "Shoutmon B": {"Digitama": "ST", "HP": 300, "ATK": 40, "SPD": 45, "DEF": 25},
+  "Shoutmon SW": {"Digitama": "ST", "HP": 300, "ATK": 65, "SPD": 40, "DEF": 25},
+  "Shoutmon SH": {"Digitama": "ST", "HP": 300, "ATK": 45, "SPD": 60, "DEF": 25}
 };
 
 const baby1List = [
@@ -125,7 +131,11 @@ const childList = [
   "Yuki Agumon",
   "Agumon-Hakase",
   "Pteromon",
-  "DORUmon"
+  "DORUmon",
+  "Shoutmon",
+  "Shoutmon B",
+  "Shoutmon SW",
+  "Shoutmon SH"
 ];
 const adultList = [
   "Bakemon",
@@ -160,7 +170,8 @@ const adultList = [
   "BomberNanimon",
   "Galemon",
   "DORUgamon",
-  "Death-X-DORUgamon"
+  "Death-X-DORUgamon",
+  "KingShoutmon"
 ];
 const perfList = [
   "AeroVdramon",
@@ -200,7 +211,7 @@ const perfList = [
   "GrandGalemon",
   "DORUguremon",
   "Death-X-DORUguremon",
-  "Wargreymon"
+  "OmegaShoutmon"
 ];
 const ultList = [
   "Daipenmon",
@@ -209,6 +220,7 @@ const ultList = [
   "PlatinumNumemon",
   "DeviDigitamamon",
   "PrinceMamemon",
+  "Wargreymon",
   "Wargreymon-Black"
 ];
 
