@@ -56,7 +56,7 @@ function timer() {
     }
     if(0 <= UTChr && UTChr < 3) {
         status="limited!";
-        byline="Meat, Bandages, and Drivers only.";
+        byline="Meat, Bandages, Medicine, and Drivers only.";
     }
     document.getElementById("status").textContent = status;
     document.getElementById("byline").textContent = byline;
