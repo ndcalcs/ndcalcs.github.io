@@ -15,6 +15,16 @@ const specials = [
     "Anomaly Meat"
 ]
 
+const drake_sched = [
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false
+]
+
 function timer() {
     let d = new Date(Date.now());
     `document.getElementById("now").textContent = d.toTimeString().substring(0,5);`
@@ -38,11 +48,10 @@ function timer() {
     }
 
     let UTChr = d.getUTCHours();
-    console.log(UTChr);
     let status = String();
     let byline = String();
     if(3 <= UTChr && UTChr <= 5) {
-        status="closed!";
+        status="closed.";
         byline="Come back later.";
     }
     if(6 <= UTChr && UTChr <= 17) {
@@ -64,7 +73,8 @@ function timer() {
     let UTCday = d.getUTCDay();
     let special = String();
     let tomorrow = String();
-    if (status=="closed!") {
+    let drake = String();
+    if (status=="closed.") {
         special = "None (closed).";
         tomorrow = specials[UTCday];
     }
@@ -78,8 +88,14 @@ function timer() {
         else { special = specials[UTCday-1]; }
         tomorrow = specials[UTCday];
     }
+    if (drake_sched[UTCday]) {
+        drake = "open!"
+    } else {
+        drake = "closed."
+    }
     document.getElementById("special").textContent = special;
     document.getElementById("tomorrow").textContent = tomorrow;
+    document.getElementById("drake").textContent = drake;
 }
 
 function getDSTOffset(year) {

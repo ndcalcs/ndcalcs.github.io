@@ -106,20 +106,25 @@ const digimonDict = {
   "Shoutmon SH": {"Digitama": "ST", "HP": 300, "ATK": 45, "SPD": 60, "DEF": 25},
   "Raptordramon": {"Digitama": "AP", "HP": 1300, "ATK": 90, "SPD": 60, "DEF": 70},
   "Grademon": {"Digitama": "AP", "HP": 2300, "ATK": 210, "SPD": 130, "DEF": 130},
-  "Grademon(Vice)": {"Digitama": "AP", "HP": 2000, "ATK": 245, "SPD": 130, "DEF": 125}
+  "Grademon(Vice)": {"Digitama": "AP", "HP": 2000, "ATK": 245, "SPD": 130, "DEF": 125},
+  "Kekomon": {"Digitama": "GK", "HP": 150, "ATK": 2, "SPD": 2, "DEF": 2},
+  "Kekkomon": {"Digitama": "GK", "HP": 220, "ATK": 2, "SPD": 2, "DEF": 4},
+  "Gekkomon": {"Digitama": "GK", "HP": 450, "ATK": 35, "SPD": 35, "DEF": 35}
 };
 
 const baby1List = [
   "Botamon",
   "Chibickmon",
   "Yolkmon",
-  "Dodomon"
+  "Dodomon",
+  "Kekomon"
 ];
 const baby2List = [
   "Koromon",
   "Pickmon",
   "Fluffymon",
-  "Dorimon"
+  "Dorimon",
+  "Kekkomon"
 ];
 const childList = [
   "Agumon",
@@ -138,7 +143,8 @@ const childList = [
   "Shoutmon",
   "Shoutmon B",
   "Shoutmon SW",
-  "Shoutmon SH"
+  "Shoutmon SH",
+  "Gekkomon"
 ];
 const adultList = [
   "Bakemon",

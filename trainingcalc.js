@@ -22,13 +22,14 @@ const stageCaps = {
 const foodValues = {
     "None": 0.0,
     "Anomaly Meat": 1.0,
+    "Booster Chip": 3.5,
     "Carrot": 0.5,
     "Chaos Mushroom": 2.0,
     "Devil Fruit": 2.0,
     "Judgemental Lemon": 1.0,
     "Miraculous Tomato": 1.0,
-    "Lunar Mushroom": 2.0,
-    "Solar Mushroom": 2.0
+    "Lunar Mushroom": 1.6,
+    "Solar Mushroom": 1.6
 }
 
 function training(stage,bond,arrow,food,stat)
